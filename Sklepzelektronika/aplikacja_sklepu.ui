@@ -57,7 +57,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="login_page">
      <widget class="QWidget" name="Logowanie_widget" native="true">
@@ -171,7 +171,7 @@
          <string>Hasło: </string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_2">
+       <widget class="QLineEdit" name="haslo_logowanie_edit">
         <property name="geometry">
          <rect>
           <x>75</x>
@@ -193,7 +193,7 @@
          <string>hasło</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="login_logowanie_edit">
         <property name="geometry">
          <rect>
           <x>75</x>
@@ -218,7 +218,7 @@
          <string>login</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="Zaloguj_button">
+       <widget class="QPushButton" name="zaloguj_button">
         <property name="geometry">
          <rect>
           <x>60</x>
@@ -461,9 +461,9 @@
         <widget class="QSplitter" name="splitter_5">
          <property name="geometry">
           <rect>
-           <x>0</x>
+           <x>10</x>
            <y>20</y>
-           <width>150</width>
+           <width>131</width>
            <height>550</height>
           </rect>
          </property>
@@ -482,7 +482,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>151</width>
+             <width>131</width>
              <height>121</height>
             </rect>
            </property>
@@ -513,6 +513,9 @@
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
+            <property name="invertedAppearance">
+             <bool>false</bool>
+            </property>
            </widget>
           </widget>
          </widget>
@@ -528,7 +531,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>151</width>
+             <width>131</width>
              <height>121</height>
             </rect>
            </property>
@@ -1533,9 +1536,9 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>lineEdit</tabstop>
-  <tabstop>lineEdit_2</tabstop>
-  <tabstop>Zaloguj_button</tabstop>
+  <tabstop>login_logowanie_edit</tabstop>
+  <tabstop>haslo_logowanie_edit</tabstop>
+  <tabstop>zaloguj_button</tabstop>
  </tabstops>
  <resources/>
  <connections/>
