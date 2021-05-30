@@ -34,6 +34,18 @@
     <ClCompile Include="aplikacja_sklepu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bazadanych.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sha256.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="model_towar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="aplikacja_sklepu.ui">
@@ -44,5 +56,19 @@
     <QtMoc Include="aplikacja_sklepu.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Model.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="model_towar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bazadanych.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sha256.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -109,13 +109,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="model_towar.cpp" />
+    <ClCompile Include="sha256.cpp" />
     <QtRcc Include="Sklepzelektronika.qrc" />
     <QtUic Include="aplikacja_sklepu.ui" />
     <ClCompile Include="aplikacja_sklepu.cpp" />
+    <ClCompile Include="bazadanych.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="aplikacja_sklepu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bazadanych.h" />
+    <QtMoc Include="model_towar.h" />
+    <QtMoc Include="Model.h" />
+    <ClInclude Include="sha256.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

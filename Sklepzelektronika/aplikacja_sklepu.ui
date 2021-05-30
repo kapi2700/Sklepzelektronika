@@ -230,6 +230,31 @@
         <property name="text">
          <string>Zaloguj</string>
         </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="niepoprawnedane_lbl">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>211</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -260,7 +285,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>Prrodukty</string>
+        <string>Produkty</string>
        </property>
       </widget>
       <widget class="QPushButton" name="transakcje_btn">
@@ -598,7 +623,7 @@
           <x>8</x>
           <y>10</y>
           <width>91</width>
-          <height>191</height>
+          <height>270</height>
          </rect>
         </property>
         <property name="orientation">
@@ -606,12 +631,12 @@
         </property>
         <widget class="QRadioButton" name="radioButton">
          <property name="text">
-          <string>RadioButton</string>
+          <string>rezystory</string>
          </property>
         </widget>
         <widget class="QRadioButton" name="radioButton_2">
          <property name="text">
-          <string>RadioButton</string>
+          <string>czujniki</string>
          </property>
         </widget>
         <widget class="QRadioButton" name="radioButton_3">
@@ -640,6 +665,21 @@
          </property>
         </widget>
         <widget class="QRadioButton" name="radioButton_8">
+         <property name="text">
+          <string>RadioButton</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_9">
+         <property name="text">
+          <string>RadioButton</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_10">
+         <property name="text">
+          <string>RadioButton</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_11">
          <property name="text">
           <string>RadioButton</string>
          </property>
@@ -684,6 +724,12 @@
        </property>
        <attribute name="horizontalHeaderCascadingSectionResizes">
         <bool>false</bool>
+       </attribute>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>40</number>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>50</number>
        </attribute>
        <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
         <bool>false</bool>
@@ -1093,7 +1139,7 @@
         <enum>Qt::ScrollBarAlwaysOff</enum>
        </property>
        <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
+        <set>QAbstractItemView::DoubleClicked</set>
        </property>
        <property name="showDropIndicator" stdset="0">
         <bool>false</bool>
@@ -1321,7 +1367,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page">
+    <widget class="QWidget" name="pracownicy_page">
      <widget class="Line" name="line_19">
       <property name="geometry">
        <rect>
@@ -1445,6 +1491,12 @@
          <height>631</height>
         </rect>
        </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="frameShadow">
         <enum>QFrame::Sunken</enum>
        </property>
@@ -1475,6 +1527,12 @@
        <attribute name="horizontalHeaderCascadingSectionResizes">
         <bool>false</bool>
        </attribute>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>200</number>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>320</number>
+       </attribute>
        <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
         <bool>false</bool>
        </attribute>
@@ -1483,6 +1541,9 @@
        </attribute>
        <attribute name="verticalHeaderCascadingSectionResizes">
         <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>30</number>
        </attribute>
        <attribute name="verticalHeaderShowSortIndicator" stdset="0">
         <bool>false</bool>
@@ -1512,7 +1573,7 @@
      <rect>
       <x>110</x>
       <y>5</y>
-      <width>81</width>
+      <width>191</width>
       <height>21</height>
      </rect>
     </property>
@@ -1525,12 +1586,28 @@
      <rect>
       <x>110</x>
       <y>30</y>
-      <width>81</width>
+      <width>191</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>Rola</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="menu_btn">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1154</x>
+      <y>0</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MENU</string>
     </property>
    </widget>
   </widget>
