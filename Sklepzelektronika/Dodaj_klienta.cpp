@@ -169,5 +169,4 @@ void Dodaj_klienta::anuluj()
 	zapelnione = false;
 	zakonczono = true;
 	this->hide();
-
 }

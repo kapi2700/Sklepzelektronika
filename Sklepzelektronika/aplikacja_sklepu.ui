@@ -1277,7 +1277,7 @@
        </property>
        <widget class="QLabel" name="name_klienci_lbl">
         <property name="text">
-         <string>Nazwisko Imię</string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1306,7 +1306,7 @@
          </widget>
          <widget class="QLabel" name="email_klienci_lbl">
           <property name="text">
-           <string>jakistamemail@cos.iksde</string>
+           <string/>
           </property>
          </widget>
         </widget>
@@ -1325,12 +1325,12 @@
           </property>
           <widget class="QLabel" name="telefon1_klienci_lbl">
            <property name="text">
-            <string>2151647457</string>
+            <string/>
            </property>
           </widget>
           <widget class="QLabel" name="telefon2_klienci_lbl">
            <property name="text">
-            <string>1251513634</string>
+            <string/>
            </property>
           </widget>
          </widget>
@@ -1346,7 +1346,7 @@
          </widget>
          <widget class="QLabel" name="adres_klienci_lbl">
           <property name="text">
-           <string>Długi adres dla testu bo tak</string>
+           <string/>
           </property>
          </widget>
         </widget>
@@ -1363,6 +1363,19 @@
        </property>
        <property name="text">
         <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="usun_klienta_btn">
+       <property name="geometry">
+        <rect>
+         <x>1080</x>
+         <y>400</y>
+         <width>91</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Usuń</string>
        </property>
       </widget>
      </widget>

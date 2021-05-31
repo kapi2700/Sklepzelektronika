@@ -13,6 +13,7 @@
 #include "model_klienci.h"
 #include "model_transakcje.h"
 #include "Dodaj_klienta.h"
+#include "edytuj_klienta.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class aplikacja_sklepu; }
@@ -37,6 +38,9 @@ private slots:
     void szukaj_transakcje();
 
     void dodaj_klienta_rel();
+
+    void wybor_klienta();
+    void edytujKlienta();
 private:
     Ui::aplikacja_sklepu* ui;
     Model* pracownicy_model;
@@ -46,5 +50,8 @@ private:
     bazadanych baza;
 
     Dodaj_klienta* nowyKlient;
+    edytuj_klienta* klient;
+
+    int wybrany_klient;
 };
 #endif // APLIKACJA_SKLEPU_H

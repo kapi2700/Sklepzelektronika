@@ -7,6 +7,10 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget *parent)
 {
     ui->setupUi(this);
 
+    klient = NULL;
+    nowyKlient = NULL;
+
+    ui->edytujopis_klienci_btn->setDisabled(1);
 
     //logowanie
     connect(ui->zaloguj_button, &QPushButton::released, this, &aplikacja_sklepu::zaloguj);
@@ -31,6 +35,12 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget *parent)
 
     //dodawanie nowych
     connect(ui->dodaj_klienta_btn, &QPushButton::released, this, &aplikacja_sklepu::dodaj_klienta_rel);
+
+    //wybieranie
+    connect(ui->klienci_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_klienta()));
+
+    //edycja
+    connect(ui->edytujopis_klienci_btn, &QPushButton::released, this, &aplikacja_sklepu::edytujKlienta);
 }
 
 aplikacja_sklepu::~aplikacja_sklepu()
@@ -178,6 +188,24 @@ void aplikacja_sklepu::szukaj_pracownicy()
 
 void aplikacja_sklepu::szukaj_klienci()
 {
+    if (klient != NULL)
+    {
+        if (klient->zakonczono == false)
+            return;
+        else
+        {
+            if (klient->zapelnione)
+            {
+                delete klienci_model;
+                klienci_model = new model_klienci;
+                klienci_model->dane_otrzymane = baza.wyswietl_liste_klientow();
+                ui->klienci_table->setModel(klienci_model);
+            }
+        }
+        delete klient;
+        klient = NULL;
+    }
+
     if (nowyKlient != NULL)
     {
         if (nowyKlient->zakonczono == false)
@@ -291,4 +319,61 @@ void aplikacja_sklepu::dodaj_klienta_rel()
     nowyKlient->show();
 }
 
+void aplikacja_sklepu::wybor_klienta()
+{
+    QModelIndex index = ui->klienci_table->currentIndex();
+    int i = index.row(); // now you know which record was selected
+    string jeden;
 
+    jeden = klienci_model->dane_otrzymane[i][1];
+    jeden += " ";
+    jeden += klienci_model->dane_otrzymane[i][2];   //imie i nazwisko
+
+    QString str = QString::fromUtf8(jeden.c_str());
+    ui->name_klienci_lbl->setText(str);
+
+    jeden = (klienci_model->dane_otrzymane[i][3]);  //email
+    str = QString::fromUtf8(jeden.c_str());
+    ui->email_klienci_lbl->setText(str);
+
+    jeden = (klienci_model->dane_otrzymane[i][11]); //telefon1
+    str = QString::fromUtf8(jeden.c_str());
+    ui->telefon1_klienci_lbl->setText(str);
+
+    jeden = (klienci_model->dane_otrzymane[i][12]); //telefon2
+    str = QString::fromUtf8(jeden.c_str());
+    ui->telefon2_klienci_lbl->setText(str);
+
+    jeden = klienci_model->dane_otrzymane[i][6];
+    jeden += " ";
+    jeden += klienci_model->dane_otrzymane[i][7];
+    if (klienci_model->dane_otrzymane[i][7] != "")
+    {
+        jeden += "/";
+        jeden += klienci_model->dane_otrzymane[i][8];
+    }
+    jeden += " ";
+    jeden += klienci_model->dane_otrzymane[i][9];
+    jeden += " ";
+    jeden += klienci_model->dane_otrzymane[i][5];
+
+    str = QString::fromUtf8(jeden.c_str());
+    ui->adres_klienci_lbl->setText(str);            //adres
+
+
+
+    jeden = klienci_model->dane_otrzymane[i][4];    //opis
+    str = QString::fromUtf8(jeden.c_str());
+    ui->opis_txtbrwsr->setText(str);
+
+    wybrany_klient = i;
+
+    ui->edytujopis_klienci_btn->setDisabled(0);
+}
+
+
+void aplikacja_sklepu::edytujKlienta()
+{
+    klient = new edytuj_klienta(baza.conn, klienci_model->dane_otrzymane[wybrany_klient], Q_NULLPTR);
+    klient->show();
+}

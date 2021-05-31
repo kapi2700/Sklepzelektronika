@@ -110,6 +110,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Dodaj_klienta.cpp" />
+    <ClCompile Include="edytuj_klienta.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="model_klienci.cpp" />
     <ClCompile Include="model_towar.cpp" />
@@ -121,6 +122,7 @@
     <ClCompile Include="bazadanych.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="Dodaj_klienta.ui" />
+    <QtUic Include="edytuj_klienta.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="aplikacja_sklepu.h" />
@@ -132,7 +134,11 @@
     <QtMoc Include="model_klienci.h" />
     <QtMoc Include="model_transakcje.h" />
     <QtMoc Include="Dodaj_klienta.h" />
+    <QtMoc Include="edytuj_klienta.h" />
     <ClInclude Include="sha256.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

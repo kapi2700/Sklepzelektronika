@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>edytuj_klienta</class>
+ <widget class="QWidget" name="edytuj_klienta">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>473</width>
+    <height>509</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>edytuj_klienta</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>471</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>edytuj adres</string>
+    </attribute>
+    <widget class="QSplitter" name="splitter_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>441</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Miejscowosc</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="miejsc_lbl"/>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>numer domu</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="dom_lbl"/>
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>numer mieszkania</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="miesz_lbl"/>
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Ulica</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ul_lbl"/>
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>kod pocztowy</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="kod_lbl"/>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>edytuj telefon</string>
+    </attribute>
+    <widget class="QSplitter" name="splitter_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>441</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Telefon</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="kon_txt"/>
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>Wewnetrzny</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="wew_txt"/>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>edytuj personalia</string>
+    </attribute>
+    <widget class="QSplitter" name="splitter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>9</y>
+       <width>441</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string>Imie</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="imie_txt"/>
+     <widget class="QLabel" name="label_12">
+      <property name="text">
+       <string>Nazwisko</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="nazwisko_txt"/>
+     <widget class="QLabel" name="label_13">
+      <property name="text">
+       <string>NIP</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="nip_txt"/>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Email</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="email_txt"/>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Opis</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="opis_txt"/>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="potwirdz_btn">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>430</y>
+     <width>231</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Potwierdz</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="anuluj_btn">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>430</y>
+     <width>231</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Anuluj</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

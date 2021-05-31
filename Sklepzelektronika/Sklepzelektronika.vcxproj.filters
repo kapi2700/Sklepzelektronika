@@ -55,12 +55,18 @@
     <ClCompile Include="Dodaj_klienta.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="edytuj_klienta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="aplikacja_sklepu.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="Dodaj_klienta.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="edytuj_klienta.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -83,6 +89,9 @@
     <QtMoc Include="Dodaj_klienta.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="edytuj_klienta.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bazadanych.h">
@@ -91,5 +100,8 @@
     <ClInclude Include="sha256.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
