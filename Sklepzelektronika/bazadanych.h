@@ -28,5 +28,7 @@ public:
 
 	vector<vector<string>> wyswietl_pracownikow();
 	vector<vector<string>> wyswietl_liste_produktow();
+	vector<vector<string>> wyswietl_liste_klientow();
+	vector<vector<string>> wyswietl_transakcje();
 };
 
