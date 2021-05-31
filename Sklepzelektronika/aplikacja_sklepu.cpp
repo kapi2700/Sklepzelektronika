@@ -98,11 +98,15 @@ void aplikacja_sklepu::produkty()
 
 void aplikacja_sklepu::klienci()
 {
+    klienci_model.dane_otrzymane = baza.wyswietl_liste_klientow();
+    ui->klienci_table->setModel(&klienci_model);
     ui->main_stack->setCurrentIndex(4);
 }
 
 void aplikacja_sklepu::transakcje()
 {
+    transakcje_model.dane_otrzymane = baza.wyswietl_transakcje();
+    ui->transakcje_table->setModel(&transakcje_model);
     ui->main_stack->setCurrentIndex(3);
 }
 
