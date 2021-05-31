@@ -123,6 +123,11 @@
     </property>
    </widget>
    <widget class="QTextEdit" name="opis_txt"/>
+   <widget class="QLabel" name="niepoprawnedane_lbl">
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

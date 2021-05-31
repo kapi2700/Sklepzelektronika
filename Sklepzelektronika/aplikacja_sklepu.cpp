@@ -48,6 +48,11 @@ void aplikacja_sklepu::zaloguj()
     str1 = (ui->login_logowanie_edit->text());
     str2 = (ui->haslo_logowanie_edit->text());
 
+    pracownicy_model = NULL;
+    towar_model = NULL;
+    klienci_model = NULL;
+    transakcje_model = NULL;
+
     QByteArray lo = str1.toLocal8Bit();
     const char* log = lo.data();
     QByteArray ha = str2.toLocal8Bit();
@@ -100,29 +105,45 @@ void aplikacja_sklepu::zaloguj()
 
 void aplikacja_sklepu::pracownicy()
 {
-    pracownicy_model.dane_otrzymane = baza.wyswietl_pracownikow();
-    ui->pracownicy_table->setModel(&pracownicy_model);
+    if (pracownicy_model != NULL)
+        delete pracownicy_model;
+
+    pracownicy_model = new Model;
+    pracownicy_model->dane_otrzymane = baza.wyswietl_pracownikow();
+    ui->pracownicy_table->setModel(pracownicy_model);
     ui->main_stack->setCurrentIndex(5);
 }
 
 void aplikacja_sklepu::produkty()
 {
-    towar_model.dane_otrzymane = baza.wyswietl_liste_produktow();
-    ui->towar_table->setModel(&towar_model);
+    if (towar_model != NULL)
+        delete towar_model;
+
+    towar_model = new model_towar;
+    towar_model->dane_otrzymane = baza.wyswietl_liste_produktow();
+    ui->towar_table->setModel(towar_model);
     ui->main_stack->setCurrentIndex(2);
 }
 
 void aplikacja_sklepu::klienci()
 {
-    klienci_model.dane_otrzymane = baza.wyswietl_liste_klientow();
-    ui->klienci_table->setModel(&klienci_model);
+    if (klienci_model != NULL)
+        delete klienci_model;
+
+    klienci_model = new model_klienci;
+    klienci_model->dane_otrzymane = baza.wyswietl_liste_klientow();
+    ui->klienci_table->setModel(klienci_model);
     ui->main_stack->setCurrentIndex(4);
 }
 
 void aplikacja_sklepu::transakcje()
 {
-    transakcje_model.dane_otrzymane = baza.wyswietl_transakcje();
-    ui->transakcje_table->setModel(&transakcje_model);
+    if (transakcje_model != NULL)
+        delete transakcje_model;
+
+    transakcje_model = new model_transakcje;
+    transakcje_model->dane_otrzymane = baza.wyswietl_transakcje();
+    ui->transakcje_table->setModel(transakcje_model);
     ui->main_stack->setCurrentIndex(3);
 }
 
@@ -138,12 +159,12 @@ void aplikacja_sklepu::szukaj_pracownicy()
 
     str1 = (ui->szukaj_pracownicy_txt->text());
 
-    for (int i = 0; i < pracownicy_model.dane_otrzymane.size(); i++)
+    for (int i = 0; i < pracownicy_model->dane_otrzymane.size(); i++)
     {
         pokaz = false;
-        for (int j = 0; j < pracownicy_model.dane_otrzymane[i].size(); j++)
+        for (int j = 0; j < pracownicy_model->dane_otrzymane[i].size(); j++)
         {
-            str2 = QString::fromUtf8(pracownicy_model.dane_otrzymane[i][j].c_str());
+            str2 = QString::fromUtf8(pracownicy_model->dane_otrzymane[i][j].c_str());
             pokaz = (str2.contains(str1, Qt::CaseInsensitive));
             if (pokaz)
                 break;
@@ -157,17 +178,54 @@ void aplikacja_sklepu::szukaj_pracownicy()
 
 void aplikacja_sklepu::szukaj_klienci()
 {
+    if (nowyKlient != NULL)
+    {
+        if (nowyKlient->zakonczono == false)
+            return;
+        else
+        {
+            if (nowyKlient->zapelnione)
+            {
+                string zapytanie = "call add_client(";
+                for (int i = 0; i < nowyKlient->dane.size(); i++)
+                {
+                    zapytanie += nowyKlient->dane[i];
+                    if (i != (nowyKlient->dane.size() - 1))
+                    {
+                        zapytanie += ",";
+                    }
+                }
+                zapytanie += ");";
+
+                int status = mysql_query(baza.conn, zapytanie.c_str());
+                if (!status)
+                {
+                    delete klienci_model;
+                    klienci_model = new model_klienci;
+                    klienci_model->dane_otrzymane = baza.wyswietl_liste_klientow();
+                    ui->klienci_table->setModel(klienci_model);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            delete nowyKlient;
+            nowyKlient = NULL;
+        }
+    }
+
     QString str1, str2;
     bool pokaz = false;
 
     str1 = (ui->szukaj_klienci_txt->text());
 
-    for (int i = 0; i < klienci_model.dane_otrzymane.size(); i++)
+    for (int i = 0; i < klienci_model->dane_otrzymane.size(); i++)
     {
         pokaz = false;
-        for (int j = 0; j < klienci_model.dane_otrzymane[i].size(); j++)
+        for (int j = 0; j < klienci_model->dane_otrzymane[i].size(); j++)
         {
-            str2 = QString::fromUtf8(klienci_model.dane_otrzymane[i][j].c_str());
+            str2 = QString::fromUtf8(klienci_model->dane_otrzymane[i][j].c_str());
             pokaz = (str2.contains(str1, Qt::CaseInsensitive));
             if (pokaz)
                 break;
@@ -186,12 +244,12 @@ void aplikacja_sklepu::szukaj_produkty()
 
     str1 = (ui->szukaj_towar_txt->text());
 
-    for (int i = 0; i < towar_model.dane_otrzymane.size(); i++)
+    for (int i = 0; i < towar_model->dane_otrzymane.size(); i++)
     {
         pokaz = false;
-        for (int j = 0; j < towar_model.dane_otrzymane[i].size(); j++)
+        for (int j = 0; j < towar_model->dane_otrzymane[i].size(); j++)
         {
-            str2 = QString::fromUtf8(towar_model.dane_otrzymane[i][j].c_str());
+            str2 = QString::fromUtf8(towar_model->dane_otrzymane[i][j].c_str());
             pokaz = (str2.contains(str1, Qt::CaseInsensitive));
             if (pokaz)
                 break;
@@ -210,12 +268,12 @@ void aplikacja_sklepu::szukaj_transakcje()
 
     str1 = (ui->szukaj_trans_txt->text());
 
-    for (int i = 0; i < transakcje_model.dane_otrzymane.size(); i++)
+    for (int i = 0; i < transakcje_model->dane_otrzymane.size(); i++)
     {
         pokaz = false;
-        for (int j = 0; j < transakcje_model.dane_otrzymane[i].size(); j++)
+        for (int j = 0; j < transakcje_model->dane_otrzymane[i].size(); j++)
         {
-            str2 = QString::fromUtf8(transakcje_model.dane_otrzymane[i][j].c_str());
+            str2 = QString::fromUtf8(transakcje_model->dane_otrzymane[i][j].c_str());
             pokaz = (str2.contains(str1, Qt::CaseInsensitive));
             if (pokaz)
                 break;
@@ -229,9 +287,8 @@ void aplikacja_sklepu::szukaj_transakcje()
 
 void aplikacja_sklepu::dodaj_klienta_rel()
 {
-    Dodaj_klienta nowyKlient;
-
-    nowyKlient.show();
+    nowyKlient = new Dodaj_klienta;
+    nowyKlient->show();
 }
 
 

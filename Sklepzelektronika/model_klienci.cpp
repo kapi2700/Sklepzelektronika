@@ -13,7 +13,7 @@ int model_klienci::rowCount(const QModelIndex& /*parent*/) const
 
 int model_klienci::columnCount(const QModelIndex& /*parent*/) const
 {
-    return 11;
+    return 12;
 }
 
 QVariant model_klienci::data(const QModelIndex& index, int role) const
@@ -25,7 +25,13 @@ QVariant model_klienci::data(const QModelIndex& index, int role) const
     case Qt::DisplayRole:
         if (row < dane_otrzymane.size())
             if (col < dane_otrzymane[row].size())
+            {
+                if (col > 3)
+                    col++;
+                if (QString::fromUtf8(dane_otrzymane[row][col].c_str()).contains("NULL"))
+                    return QString("");
                 return QString::fromUtf8(dane_otrzymane[row][col].c_str());
+            }
         return QString(" ");
         break;
     case Qt::FontRole:
@@ -42,27 +48,29 @@ QVariant model_klienci::headerData(int section, Qt::Orientation orientation, int
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
         switch (section) {
         case 0:
-            return QString("Imie");
+            return QString("Id");
         case 1:
-            return QString("Nazwisko");
+            return QString("Imie");
         case 2:
-            return QString("email");
+            return QString("Nazwisko");
         case 3:
-            return QString("Miejscowosc");
+            return QString("email");
         case 4:
-            return QString("Ulica");
+            return QString("Miejscowosc");
         case 5:
-            return QString("nr domu");
+            return QString("Ulica");
         case 6:
-            return QString("nr mieszkania");
+            return QString("nr domu");
         case 7:
-            return QString("kod pocztowy");
+            return QString("nr mieszkania");
         case 8:
-            return QString("NIP");
+            return QString("kod pocztowy");
         case 9:
-            return QString("Telefon");
+            return QString("NIP");
         case 10:
-            return QString("Telefon wewnętrzny");
+            return QString("Telefon");
+        case 11:
+            return QString("Telefon wewnetrzny");
         }
     }
     return QVariant();

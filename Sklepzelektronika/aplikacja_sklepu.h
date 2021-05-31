@@ -22,7 +22,7 @@ class aplikacja_sklepu : public QMainWindow
 {
     Q_OBJECT
 public:
-    aplikacja_sklepu(QWidget *parent = nullptr);
+    aplikacja_sklepu(QWidget* parent = nullptr);
     ~aplikacja_sklepu();
 private slots:
     void zaloguj();
@@ -37,12 +37,14 @@ private slots:
     void szukaj_transakcje();
 
     void dodaj_klienta_rel();
-private:    
-    Ui::aplikacja_sklepu *ui;
-    Model pracownicy_model;
-    model_towar towar_model;
-    model_klienci klienci_model;
-    model_transakcje transakcje_model;
+private:
+    Ui::aplikacja_sklepu* ui;
+    Model* pracownicy_model;
+    model_towar* towar_model;
+    model_klienci* klienci_model;
+    model_transakcje* transakcje_model;
     bazadanych baza;
+
+    Dodaj_klienta* nowyKlient;
 };
 #endif // APLIKACJA_SKLEPU_H

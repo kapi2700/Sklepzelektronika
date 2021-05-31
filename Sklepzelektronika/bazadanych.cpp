@@ -53,13 +53,13 @@ vector<vector<string>>  bazadanych::wyswietl_pracownikow()
     vector<string> pom;
     vector<vector<string>> ret;
 
-    string zapytanie = "SELECT imie,nazwisko,stanowisko FROM pracownicy";
+    string zapytanie = "SELECT id_pracownika,imie,nazwisko,stanowisko FROM pracownicy";
     int status = mysql_query(conn, zapytanie.c_str());
     if (!status) {
         MYSQL_RES* res = mysql_store_result(conn);
         MYSQL_ROW row;
         while (row = mysql_fetch_row(res)) {
-            for (int i = 0; i < 3; ++i) {
+            for (int i = 0; i < 4; ++i) {
                 pom.push_back((row[i] == nullptr ? "NULL" : row[i]));
             }
             ret.push_back(pom);
@@ -98,13 +98,13 @@ vector<vector<string>> bazadanych::wyswietl_liste_klientow()
     vector<string> pom;
     vector<vector<string>> ret;
     
-    string zapytanie = "SELECT imie,nazwisko,email,miejscowosc,ulica,nr_domu,nr_mieszkania,kod_pocztowy,NIP,telefon,wewnetrzny FROM Klienci,Adresy,Dane podatkowe,Telefony";
+    string zapytanie = "SELECT * FROM dane_klientow;";
     int status = mysql_query(conn, zapytanie.c_str());
     if (!status) {
         MYSQL_RES* res = mysql_store_result(conn);
         MYSQL_ROW row;
         while (row = mysql_fetch_row(res)) {
-            for (int i = 0; i < 11; ++i) {
+            for (int i = 0; i < 13; ++i) {
                 pom.push_back(row[i] == nullptr ? "NULL" : row[i]);
             }
             ret.push_back(pom);
@@ -122,13 +122,13 @@ vector<vector<string>> bazadanych::wyswietl_transakcje()
     vector<string> pom;
     vector<vector<string>> ret;
     
-    string zapytanie = "SELECT id_klienta,id_transakcji,nazwa,cena_calkowita,liczba_sztuk,id_pracownika,data_sprzedazy,data_platnosci FROM Klienci,Transakcje,Produkty,Szczegoly transakcji where (Klienci.id_klienta = Transakcje.id_klienta AND Produkty.id_produktu = Szczegoly transakcji.id_produktu);";
+    string zapytanie = "SELECT * FROM transakcje ORDER BY data_sprzedazy DESC;";
     int status = mysql_query(conn, zapytanie.c_str());
     if (!status) {
         MYSQL_RES* res = mysql_store_result(conn);
         MYSQL_ROW row;
         while (row = mysql_fetch_row(res)) {
-            for (int i = 0; i < 8; ++i) {
+            for (int i = 0; i < 6; ++i) {
                 pom.push_back(row[i] == nullptr ? "NULL" : row[i]);
             }
             ret.push_back(pom);
