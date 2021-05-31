@@ -13,7 +13,7 @@ int model_transakcje::rowCount(const QModelIndex& /*parent*/) const
 
 int model_transakcje::columnCount(const QModelIndex& /*parent*/) const
 {
-    return 16;
+    return 8;
 }
 
 QVariant model_transakcje::data(const QModelIndex& index, int role) const
@@ -42,37 +42,21 @@ QVariant model_transakcje::headerData(int section, Qt::Orientation orientation, 
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
         switch (section) {
         case 0:
-            return QString("Kategoria");
+            return QString("id klienta");
         case 1:
-            return QString("Nazwa");
+            return QString("id transakcji");
         case 2:
-            return QString("Liczba");
+            return QString("Nazwa produktu");
         case 3:
-            return QString("Cena jednostkowa");
+            return QString("Cena calkowita");
         case 4:
-            return QString("Vat");
+            return QString("Liczba sztuk");
         case 5:
-            return QString("Cecha");
+            return QString("id pracownika");
         case 6:
-            return QString("Wartosc");
+            return QString("Data sprzedazy");
         case 7:
-            return QString("Cecha");
-        case 8:
-            return QString("Wartosc");
-        case 9:
-            return QString("Cecha");
-        case 10:
-            return QString("Wartosc");
-        case 11:
-            return QString("Cecha");
-        case 12:
-            return QString("Wartosc");
-        case 13:
-            return QString("Cecha");
-        case 14:
-            return QString("Wartosc");
-        case 15:
-            return QString("Opis");
+            return Qstring("Data platnosci");
         }
     }
     return QVariant();
