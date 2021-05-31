@@ -46,9 +46,21 @@
     <ClCompile Include="model_towar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="model_klienci.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="model_transakcje.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dodaj_klienta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="aplikacja_sklepu.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Dodaj_klienta.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -60,6 +72,15 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="model_towar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="model_transakcje.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="model_klienci.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Dodaj_klienta.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

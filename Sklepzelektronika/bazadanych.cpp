@@ -102,7 +102,7 @@ vector<vector<string>> bazadanych::wyswietl_liste_klientow()
     int status = mysql_query(conn, zapytanie.c_str());
     if (!status) {
         MYSQL_RES* res = mysql_store_result(conn);
-        MY_SQL_ROW row;
+        MYSQL_ROW row;
         while (row = mysql_fetch_row(res)) {
             for (int i = 0; i < 11; ++i) {
                 pom.push_back(row[i] == nullptr ? "NULL" : row[i]);
@@ -126,7 +126,7 @@ vector<vector<string>> bazadanych::wyswietl_transakcje()
     int status = mysql_query(conn, zapytanie.c_str());
     if (!status) {
         MYSQL_RES* res = mysql_store_result(conn);
-        MY_SQL_ROW row;
+        MYSQL_ROW row;
         while (row = mysql_fetch_row(res)) {
             for (int i = 0; i < 8; ++i) {
                 pom.push_back(row[i] == nullptr ? "NULL" : row[i]);
@@ -137,8 +137,3 @@ vector<vector<string>> bazadanych::wyswietl_transakcje()
     }
     return ret;
 }
-
-
-
-
-

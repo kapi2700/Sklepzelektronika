@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dodaj_klienta</class>
+ <widget class="QWidget" name="Dodaj_klienta">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>392</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dodaj_klienta</string>
+  </property>
+  <widget class="QPushButton" name="dodaj_btn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>720</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dodaj</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="anuluj_btn">
+   <property name="geometry">
+    <rect>
+     <x>204</x>
+     <y>720</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Anuluj</string>
+   </property>
+  </widget>
+  <widget class="QSplitter" name="splitter">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>371</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="text">
+     <string>Imie</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="imie_txt"/>
+   <widget class="QLabel" name="label_2">
+    <property name="text">
+     <string>Nazwisko</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nazwisko_txt"/>
+   <widget class="QLabel" name="lbl3">
+    <property name="text">
+     <string>Email</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="email_txt"/>
+   <widget class="QLabel" name="lbl4">
+    <property name="text">
+     <string>Miejscowość</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="miejsc_txt"/>
+   <widget class="QLabel" name="lbl5">
+    <property name="text">
+     <string>nr domu</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="dom_txt"/>
+   <widget class="QLabel" name="lbl5_2">
+    <property name="text">
+     <string>nr mieszkania</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="mieszkanie_txt"/>
+   <widget class="QLabel" name="label_8">
+    <property name="text">
+     <string>Ulica</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ul_txt"/>
+   <widget class="QLabel" name="label_6">
+    <property name="text">
+     <string>Kod Pocztowy (5 cyfr)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="kod_txt"/>
+   <widget class="QLabel" name="label_9">
+    <property name="text">
+     <string>NIP</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nip_txt"/>
+   <widget class="QLabel" name="label_10">
+    <property name="text">
+     <string>Telefon kontaktowy</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="kont_txt"/>
+   <widget class="QLabel" name="label_11">
+    <property name="text">
+     <string>Telefon wewnętrzny</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="wew_txt"/>
+   <widget class="QLabel" name="label_12">
+    <property name="text">
+     <string>Opis</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="opis_txt"/>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

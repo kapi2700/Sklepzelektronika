@@ -60,7 +60,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include\MySQL Connector C++ 1.0.5\include;$(SolutionDir)\include\MySQL Server 8.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\MySQL Connector C++ 1.0.5\include;$(SolutionDir)\include\MySQL Server 8.0\include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
@@ -72,7 +72,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include\MySQL Connector C++ 1.0.5\include;$(SolutionDir)\include\MySQL Server 8.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\MySQL Connector C++ 1.0.5\include;$(SolutionDir)\include\MySQL Server 8.0\include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
@@ -109,14 +109,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Dodaj_klienta.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="model_klienci.cpp" />
     <ClCompile Include="model_towar.cpp" />
+    <ClCompile Include="model_transakcje.cpp" />
     <ClCompile Include="sha256.cpp" />
     <QtRcc Include="Sklepzelektronika.qrc" />
     <QtUic Include="aplikacja_sklepu.ui" />
     <ClCompile Include="aplikacja_sklepu.cpp" />
     <ClCompile Include="bazadanych.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="Dodaj_klienta.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="aplikacja_sklepu.h" />
@@ -125,6 +129,9 @@
     <ClInclude Include="bazadanych.h" />
     <QtMoc Include="model_towar.h" />
     <QtMoc Include="Model.h" />
+    <QtMoc Include="model_klienci.h" />
+    <QtMoc Include="model_transakcje.h" />
+    <QtMoc Include="Dodaj_klienta.h" />
     <ClInclude Include="sha256.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

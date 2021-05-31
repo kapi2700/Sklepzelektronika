@@ -1366,6 +1366,19 @@
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
+     <widget class="QPushButton" name="dodaj_klienta_btn">
+      <property name="geometry">
+       <rect>
+        <x>1090</x>
+        <y>0</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dodaj Klienta</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="pracownicy_page">
      <widget class="Line" name="line_19">
@@ -1552,6 +1565,19 @@
         <bool>false</bool>
        </attribute>
       </widget>
+     </widget>
+     <widget class="QPushButton" name="dodaj_pracownicy_btn">
+      <property name="geometry">
+       <rect>
+        <x>1090</x>
+        <y>0</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dodaj pracownika</string>
+      </property>
      </widget>
     </widget>
    </widget>
