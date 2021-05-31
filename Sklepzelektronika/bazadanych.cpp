@@ -91,3 +91,54 @@ vector<vector<string>> bazadanych::wyswietl_liste_produktow()
 
     return ret;
 }
+
+
+vector<vector<string>> bazadanych::wyswietl_liste_klientow()
+{
+    vector<string> pom;
+    vector<vector<string>> ret;
+    
+    string zapytanie = "SELECT imie,nazwisko,email,miejscowosc,ulica,nr_domu,nr_mieszkania,kod_pocztowy,NIP,telefon,wewnetrzny FROM Klienci,Adresy,Dane podatkowe,Telefony";
+    int status = mysql_query(conn, zapytanie.c_str());
+    if (!status) {
+        MYSQL_RES* res = mysql_store_result(conn);
+        MY_SQL_ROW row;
+        while (row = mysql_fetch_row(res)) {
+            for (int i = 0; i < 11; ++i) {
+                pom.push_back(row[i] == nullptr ? "NULL" : row[i]);
+            }
+            ret.push_back(pom);
+            pom.clear();
+        }
+    }
+    return ret;
+}
+
+
+
+
+vector<vector<string>> bazadanych::wyswietl_transakcje()
+{
+    vector<string> pom;
+    vector<vector<string>> ret;
+    
+    string zapytanie = "SELECT id_klienta,id_transakcji,nazwa,cena_calkowita,liczba_sztuk,id_pracownika,data_sprzedazy,data_platnosci FROM Klienci,Transakcje,Produkty,Szczegoly transakcji where (Klienci.id_klienta = Transakcje.id_klienta AND Produkty.id_produktu = Szczegoly transakcji.id_produktu);";
+    int status = mysql_query(conn, zapytanie.c_str());
+    if (!status) {
+        MYSQL_RES* res = mysql_store_result(conn);
+        MY_SQL_ROW row;
+        while (row = mysql_fetch_row(res)) {
+            for (int i = 0; i < 8; ++i) {
+                pom.push_back(row[i] == nullptr ? "NULL" : row[i]);
+            }
+            ret.push_back(pom);
+            pom.clear();
+        }
+    }
+    return ret;
+}
+
+
+
+
+
