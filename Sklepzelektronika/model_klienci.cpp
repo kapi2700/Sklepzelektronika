@@ -13,7 +13,7 @@ int model_klienci::rowCount(const QModelIndex& /*parent*/) const
 
 int model_klienci::columnCount(const QModelIndex& /*parent*/) const
 {
-    return 16;
+    return 11;
 }
 
 QVariant model_klienci::data(const QModelIndex& index, int role) const
@@ -42,37 +42,27 @@ QVariant model_klienci::headerData(int section, Qt::Orientation orientation, int
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
         switch (section) {
         case 0:
-            return QString("Kategoria");
+            return QString("Imie");
         case 1:
-            return QString("Nazwa");
+            return QString("Nazwisko");
         case 2:
-            return QString("Liczba");
+            return QString("email");
         case 3:
-            return QString("Cena jednostkowa");
+            return QString("Miejscowosc");
         case 4:
-            return QString("Vat");
+            return QString("Ulica");
         case 5:
-            return QString("Cecha");
+            return QString("nr domu");
         case 6:
-            return QString("Wartosc");
+            return QString("nr mieszkania");
         case 7:
-            return QString("Cecha");
+            return QString("kod pocztowy");
         case 8:
-            return QString("Wartosc");
+            return QString("NIP");
         case 9:
-            return QString("Cecha");
+            return QString("Telefon");
         case 10:
-            return QString("Wartosc");
-        case 11:
-            return QString("Cecha");
-        case 12:
-            return QString("Wartosc");
-        case 13:
-            return QString("Cecha");
-        case 14:
-            return QString("Wartosc");
-        case 15:
-            return QString("Opis");
+            return QString("Telefon wewnętrzny");
         }
     }
     return QVariant();
