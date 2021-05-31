@@ -41,6 +41,7 @@ private slots:
 
     void wybor_klienta();
     void edytujKlienta();
+    void usunKlienta();
 private:
     Ui::aplikacja_sklepu* ui;
     Model* pracownicy_model;
@@ -53,5 +54,6 @@ private:
     edytuj_klienta* klient;
 
     int wybrany_klient;
+    bool zmiany_klienci;
 };
 #endif // APLIKACJA_SKLEPU_H

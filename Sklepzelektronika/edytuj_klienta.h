@@ -13,7 +13,6 @@ class edytuj_klienta : public QWidget
 	Q_OBJECT
 
 public:
-	edytuj_klienta(QWidget *parent = Q_NULLPTR);
 	edytuj_klienta(MYSQL* c, vector<string> data, QWidget* parent = Q_NULLPTR);
 	~edytuj_klienta();
 
@@ -29,6 +28,7 @@ private:
 	void edytuj_adres_klienta();
 	void edytuj_telefon_klienta();
 	void edytuj_personalia_klienta();
+	void dodaj_telefon_klienta();
 
 	void potwierdz();
 	void anuluj();

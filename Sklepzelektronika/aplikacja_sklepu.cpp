@@ -10,6 +10,8 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget *parent)
     klient = NULL;
     nowyKlient = NULL;
 
+    zmiany_klienci = false;
+
     ui->edytujopis_klienci_btn->setDisabled(1);
 
     //logowanie
@@ -41,6 +43,7 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget *parent)
 
     //edycja
     connect(ui->edytujopis_klienci_btn, &QPushButton::released, this, &aplikacja_sklepu::edytujKlienta);
+    connect(ui->usun_klienta_btn, &QPushButton::released, this, &aplikacja_sklepu::usunKlienta);
 }
 
 aplikacja_sklepu::~aplikacja_sklepu()
@@ -204,6 +207,15 @@ void aplikacja_sklepu::szukaj_klienci()
         }
         delete klient;
         klient = NULL;
+    }
+
+    if (zmiany_klienci)
+    {
+        delete klienci_model;
+        klienci_model = new model_klienci;
+        klienci_model->dane_otrzymane = baza.wyswietl_liste_klientow();
+        ui->klienci_table->setModel(klienci_model);
+        zmiany_klienci = false;
     }
 
     if (nowyKlient != NULL)
@@ -376,4 +388,21 @@ void aplikacja_sklepu::edytujKlienta()
 {
     klient = new edytuj_klienta(baza.conn, klienci_model->dane_otrzymane[wybrany_klient], Q_NULLPTR);
     klient->show();
+}
+
+void aplikacja_sklepu::usunKlienta()
+{
+    string _imie = klienci_model->dane_otrzymane[wybrany_klient][1];
+    if (_imie != "NULL")_imie = "\"" + _imie + "\"";
+    else _imie = "null";
+    string _nazwisko = klienci_model->dane_otrzymane[wybrany_klient][2];
+    if (_nazwisko != "NULL") _nazwisko = "\"" + _nazwisko + "\"";
+    else _nazwisko = "null";
+    string _nip = klienci_model->dane_otrzymane[wybrany_klient][10];
+    if (_nip != "NULL")_nip = "\"" + _nip + "\"";
+    else _nip = "null";
+    string zapytanie = "call del_client(" + _imie + "," + _nazwisko + "," + _nip + ");";
+    mysql_query(baza.conn, zapytanie.c_str());
+
+    zmiany_klienci = true;
 }

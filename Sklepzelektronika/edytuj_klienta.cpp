@@ -2,11 +2,11 @@
 
 
 
-edytuj_klienta::edytuj_klienta(QWidget *parent)
-	: QWidget(parent)
-{
-	ui.setupUi(this);
-}
+//edytuj_klienta::edytuj_klienta(QWidget *parent)
+//	: QWidget(parent)
+//{
+//	ui.setupUi(this);
+//}
 
 edytuj_klienta::edytuj_klienta(MYSQL* c,vector<string> data, QWidget* parent)
 	: QWidget(parent)
@@ -211,6 +211,35 @@ void edytuj_klienta::edytuj_personalia_klienta()
 	}
 }
 
+void edytuj_klienta::dodaj_telefon_klienta()
+{
+	string _imie = dane[1];
+	string _nazwisko = dane[2];
+	string _nip = dane[10];
+	string _telefon = ui.dod_kon_txt->text().toUtf8().constData();
+	string _wewnetrzny = ui.dod_wew_txt->text().toUtf8().constData();
+
+	if (_imie != "-")_imie = "\"" + _imie + "\"";
+	if (_nazwisko != "-") _nazwisko = "\"" + _nazwisko + "\"";
+	if (_nip != "NULL")_nip = "\"" + _nip + "\"";
+	else _nip = "NULL";
+	if (_telefon != "") _telefon = "\"" + _telefon + "\"";
+	else _telefon = "NULL";
+	if (_wewnetrzny != "") _wewnetrzny = "\"" + _wewnetrzny + "\"";
+	else _wewnetrzny = "NULL";
+
+	string zapytanie = "call add_tel(" + _imie + "," + _nazwisko + "," + _nip + "," + _telefon + "," + _wewnetrzny + ");";
+	int status = mysql_query(conn, zapytanie.c_str());
+	if (!status) {
+		zakonczono = true;
+		zapelnione = true;
+	}
+	else {
+		zakonczono = true;
+		zapelnione = false;
+	}
+}
+
 void edytuj_klienta::potwierdz()
 {
 	switch (ui.tabWidget->currentIndex())
@@ -226,9 +255,14 @@ void edytuj_klienta::potwierdz()
 		rodzaj_edycji = 2;
 		return;
 	case 2:
-		edytuj_personalia_klienta();
+		dodaj_telefon_klienta();
 		hide();
 		rodzaj_edycji = 3;
+		return;
+	case 3:
+		edytuj_personalia_klienta();
+		hide();
+		rodzaj_edycji = 4;
 		return;
 	}
 }
