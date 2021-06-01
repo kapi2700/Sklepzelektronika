@@ -542,6 +542,10 @@ void aplikacja_sklepu::wybor_towaru()
 
     ui->edytuj_towar_btn->setDisabled(0);
     ui->kategorie_towar_btn_2->setDisabled(0); //to jest przycisk od ilosci towaru
+
+    ui->ilosc_dodawana->setDisabled(0);
+    ui->ilosc_dodawana->setMaximum(stoi(towar_model->dane_otrzymane[i][2]));
+    ui->dodajdokoszyka_btn->setDisabled(0);
 }
 
 
@@ -550,4 +554,12 @@ void aplikacja_sklepu::edytujTowar()
     towar = new edytuj_towar(baza.conn, towar_model->dane_otrzymane[wybrany_towar], Q_NULLPTR);
     towar->show();
     towar->indeks(0);
+}
+
+void aplikacja_sklepu::dodajdokoszyka()
+{
+    int ilosc;
+    ilosc = ui->ilosc_dodawana->value();
+
+    wkoszyku.push_back(towar_model->dane_otrzymane[wybrany_towar][1]);
 }

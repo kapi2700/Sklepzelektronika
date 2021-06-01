@@ -91,6 +91,9 @@
     <ClCompile Include="dodaj_kategorie.cpp">
       <Filter>Source Files\dodaj</Filter>
     </ClCompile>
+    <ClCompile Include="koszyk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="aplikacja_sklepu.ui">
@@ -115,6 +118,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="dodaj_kategorie.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="koszyk.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -154,6 +160,9 @@
     </QtMoc>
     <QtMoc Include="dodaj_kategorie.h">
       <Filter>Header Files\dodaj</Filter>
+    </QtMoc>
+    <QtMoc Include="koszyk.h">
+      <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

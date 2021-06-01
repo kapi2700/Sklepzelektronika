@@ -19,6 +19,7 @@
 #include "edytuj_pracownika.h"
 #include "edytuj_towar.h"
 #include "dodaj_kategorie.h"
+#include "koszyk.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class aplikacja_sklepu; }
@@ -53,6 +54,7 @@ private slots:
 
     void wybor_towaru();
     void edytujTowar();
+    void dodajdokoszyka();
     void dodaj_Kategorie();
     void dodaj_Towar();
     void aktualizuj_Towar();
@@ -81,5 +83,8 @@ private:
     int wybrany_pracownik;
 
     int wybrany_towar;
+
+    vector<string> wkoszyku;
+    vector<int> iloscwkoszyku;
 };
 #endif // APLIKACJA_SKLEPU_H
