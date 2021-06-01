@@ -1,5 +1,12 @@
 #pragma once
 
+/*!
+* \file
+* \brief Definicja klasy Dodaj_klienta
+*
+*Plik zawiera definicję klasy Dodaj_klienta
+*/
+
 #include <QWidget>
 #include "ui_Dodaj_klienta.h"
 #include <vector>
