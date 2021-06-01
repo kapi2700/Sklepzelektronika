@@ -73,8 +73,21 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget* parent)
     connect(ui->edytuj_pracownicy_btn, & QPushButton::released, this, &aplikacja_sklepu::edytujPracownika);
     connect(ui->edytuj_towar_btn, &QPushButton::released, this, &aplikacja_sklepu::edytujTowar);
     connect(ui->kategorie_towar_btn_2, &QPushButton::released, this, &aplikacja_sklepu::aktualizuj_Towar); //to jest przycisk od ilosci towaru
+    connect(ui->usun_pracownicy_btn, &QPushButton::released, this, &aplikacja_sklepu::usunPracownika);
+
+
+    //koszyk
+    connect(ui->koszyk_btn, &QPushButton::released, this, &aplikacja_sklepu::pokazkoszyk);
+    connect(ui->wyczysckoszyk_btn, &QPushButton::released, this, &aplikacja_sklepu::wyczysc_koszyk);
+    connect(ui->dodajdokoszyka_btn, &QPushButton::released, this, &aplikacja_sklepu::dodajdokoszyka);
 
     ui->main_stack->setCurrentIndex(0);
+
+    if (baza.stanowisko != 1)
+    {
+        ui->dodaj_towar_btn->setDisabled(1);
+        ui->kategorie_towar_btn->setDisabled(1);
+    }
 }
 
 aplikacja_sklepu::~aplikacja_sklepu()
@@ -106,8 +119,11 @@ void aplikacja_sklepu::zaloguj()
     
     hasz = baza.connect_database(log, haslo);
 
+
     if (baza.conn)
     {
+
+
         ui->main_stack->setCurrentIndex(1);
         id_zalogowanej_osoby = baza.dane_zalogowanego();
         ui->name_lbl->setText(baza.nazwa);
@@ -115,19 +131,21 @@ void aplikacja_sklepu::zaloguj()
 
         ui->menu_btn->setEnabled(true);
 
+
         switch (baza.stanowisko)
         {
         case 1: //wlasciciel
             break;
         case 2: //sprzedawca
-            ui->pracownicy_btn->setEnabled(false);
+            ui->pracownicy_btn->setDisabled(1);
             break;
         case 3: //magazynier
-            ui->pracownicy_btn->setEnabled(false);
-            ui->transakcje_btn->setEnabled(false);
-            ui->klienci_btn->setEnabled(false);
+            ui->pracownicy_btn->setDisabled(1);
+            ui->transakcje_btn->setDisabled(1);
+            ui->klienci_btn->setDisabled(1);
             break;
         }
+
     }
     else
     {
@@ -196,17 +214,12 @@ void aplikacja_sklepu::menu()
 
 void aplikacja_sklepu::szukaj_pracownicy()
 {
+    pracownicy();
+
     if (pracownik != NULL)
     {
         if (pracownik->zakonczono == false)
             return;
-        else
-        {
-            delete pracownicy_model;
-            pracownicy_model = new Model;
-            pracownicy_model->dane_otrzymane = baza.wyswietl_pracownikow();
-            ui->pracownicy_table->setModel(pracownicy_model);
-        }
         delete pracownik;
         pracownik = NULL;
     }
@@ -215,13 +228,13 @@ void aplikacja_sklepu::szukaj_pracownicy()
     {
         if (nowyPracownik->zakonczono == false)
             return;
-        else
-        {
-            delete pracownicy_model;
-            pracownicy_model = new Model;
-            pracownicy_model->dane_otrzymane = baza.wyswietl_pracownikow();
-            ui->pracownicy_table->setModel(pracownicy_model);
-        }
+        //else
+        //{
+        //    delete pracownicy_model;
+        //    pracownicy_model = new Model;
+        //    pracownicy_model->dane_otrzymane = baza.wyswietl_pracownikow();
+        //    ui->pracownicy_table->setModel(pracownicy_model);
+        //}
         delete nowyPracownik;
         nowyPracownik = NULL;
     }
@@ -521,6 +534,24 @@ void aplikacja_sklepu::aktualizuj_Towar()
     towar->indeks(1);
 }
 
+void aplikacja_sklepu::wyczysc_koszyk()
+{
+    wkoszyku.clear();
+    iloscwkoszyku.clear();
+}
+
+void aplikacja_sklepu::usunPracownika()
+{
+    string _imie = pracownicy_model->dane_otrzymane[wybrany_pracownik][1];
+    if (_imie != "NULL")_imie = "\"" + _imie + "\"";
+    else _imie = "null";
+    string _nazwisko = pracownicy_model->dane_otrzymane[wybrany_pracownik][2];
+    if (_nazwisko != "NULL") _nazwisko = "\"" + _nazwisko + "\"";
+    else _nazwisko = "null";
+    string zapytanie = "call del_worker(" + _imie + "," + _nazwisko + ");";
+    mysql_query(baza.conn, zapytanie.c_str());
+}
+
 void aplikacja_sklepu::edytujPracownika()
 {
     pracownik = new edytuj_pracownika(baza.conn, pracownicy_model->dane_otrzymane[wybrany_pracownik], Q_NULLPTR);
@@ -535,6 +566,7 @@ void aplikacja_sklepu::wybor_pracownika()
     wybrany_pracownik = i;
 
     ui->edytuj_pracownicy_btn->setDisabled(0);
+    ui->usun_pracownicy_btn->setDisabled(0);
 }
 
 void aplikacja_sklepu::wybor_towaru()
@@ -544,12 +576,19 @@ void aplikacja_sklepu::wybor_towaru()
 
     wybrany_towar = i;
 
-    ui->edytuj_towar_btn->setDisabled(0);
-    ui->kategorie_towar_btn_2->setDisabled(0); //to jest przycisk od ilosci towaru
 
-    ui->ilosc_dodawana->setDisabled(0);
-    ui->ilosc_dodawana->setMaximum(stoi(towar_model->dane_otrzymane[i][2]));
-    ui->dodajdokoszyka_btn->setDisabled(0);
+
+    if (baza.stanowisko != 1)
+    {
+        ui->edytuj_towar_btn->setDisabled(0);
+        ui->kategorie_towar_btn_2->setDisabled(0); //to jest przycisk od ilosci towaru
+        ui->ilosc_dodawana->setDisabled(0);
+        ui->ilosc_dodawana->setMaximum(stoi(towar_model->dane_otrzymane[i][2]));
+    }
+    if (baza.stanowisko != 2)
+    {
+        ui->dodajdokoszyka_btn->setDisabled(0);
+    }
 }
 
 

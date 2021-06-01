@@ -22,27 +22,26 @@ int bazadanych::dane_zalogowanego()
     string _rola;
 
     string zapytanie = "SELECT imie,nazwisko,stanowisko,id_pracownika from pracownicy WHERE login=\"" + login + "\";";
-    mysql_query(conn, zapytanie.c_str());
+    int status = mysql_query(conn, zapytanie.c_str());
 
-    MYSQL_RES* res = mysql_store_result(conn);
-    MYSQL_ROW row;
-
-    
-
-    row = mysql_fetch_row(res);
-    _imie = row[0];
-    _nazwisko = row[1];
-    _rola = row[2];
-    _id_pracownika = row[3];
-
-
-
-    rola = QString::fromStdString(_rola);
-
-    if (strcmp(row[2], "Wlasciciel") == 0) stanowisko = 1;
-    else if (strcmp(row[2], "Sprzedawca") == 0) stanowisko = 2;
-    else if (strcmp(row[2], "Magazynier") == 0) stanowisko = 3;
-
+    if (!status)
+    {
+        MYSQL_RES* res = mysql_store_result(conn);
+        MYSQL_ROW row;
+        row = mysql_fetch_row(res);
+        _imie = row[0];
+        _nazwisko = row[1];
+        _rola = row[2];
+        _id_pracownika = row[3];
+        rola = QString::fromStdString(_rola);
+        if (strcmp(row[2], "Wlasciciel") == 0) stanowisko = 1;
+        else if (strcmp(row[2], "Sprzedawca") == 0) stanowisko = 2;
+        else if (strcmp(row[2], "Magazynier") == 0) stanowisko = 3;
+    }
+    else
+    {
+        return -1;
+    }
     _tmp = (_imie + " " + _nazwisko);
 
     nazwa = QString::fromStdString(_tmp);

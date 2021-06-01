@@ -57,7 +57,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="login_page">
      <widget class="QWidget" name="Logowanie_widget" native="true">
@@ -444,254 +444,12 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_5">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>120</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Kategorie:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_6">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>0</y>
-         <width>150</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Cechy</string>
-       </property>
-      </widget>
-      <widget class="QStackedWidget" name="Cechy_stack">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>20</y>
-         <width>150</width>
-         <height>600</height>
-        </rect>
-       </property>
-       <property name="currentIndex">
-        <number>0</number>
-       </property>
-       <widget class="QWidget" name="page_4">
-        <widget class="QSplitter" name="splitter_5">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>20</y>
-           <width>131</width>
-           <height>550</height>
-          </rect>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <widget class="QFrame" name="frame_5">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <widget class="QSplitter" name="splitter_2">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>131</width>
-             <height>121</height>
-            </rect>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <widget class="QLabel" name="label_7">
-            <property name="text">
-             <string>Cecha</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_8">
-            <property name="text">
-             <string>Min</string>
-            </property>
-           </widget>
-           <widget class="QSlider" name="horizontalSlider">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_9">
-            <property name="text">
-             <string>Max</string>
-            </property>
-           </widget>
-           <widget class="QSlider" name="horizontalSlider_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="invertedAppearance">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </widget>
-         </widget>
-         <widget class="QFrame" name="frame_6">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <widget class="QSplitter" name="splitter_3">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>131</width>
-             <height>121</height>
-            </rect>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <widget class="QLabel" name="label_10">
-            <property name="text">
-             <string>Cecha</string>
-            </property>
-           </widget>
-           <widget class="QCheckBox" name="checkBox">
-            <property name="text">
-             <string>Cecha1</string>
-            </property>
-           </widget>
-           <widget class="QCheckBox" name="checkBox_3">
-            <property name="text">
-             <string>Cecha2</string>
-            </property>
-           </widget>
-           <widget class="QCheckBox" name="checkBox_2">
-            <property name="text">
-             <string>Cecha3</string>
-            </property>
-           </widget>
-          </widget>
-         </widget>
-        </widget>
-       </widget>
-       <widget class="QWidget" name="page_5"/>
-      </widget>
-      <widget class="Line" name="line_3">
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>0</y>
-         <width>20</width>
-         <height>630</height>
-        </rect>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-      <widget class="QFrame" name="frame_4">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>20</y>
-         <width>121</width>
-         <height>601</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QSplitter" name="splitter">
-        <property name="geometry">
-         <rect>
-          <x>8</x>
-          <y>10</y>
-          <width>91</width>
-          <height>270</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <widget class="QRadioButton" name="radioButton">
-         <property name="text">
-          <string>rezystory</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_2">
-         <property name="text">
-          <string>czujniki</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_3">
-         <property name="text">
-          <string>RadioButton</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_4">
-         <property name="text">
-          <string>RadioButton</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_5">
-         <property name="text">
-          <string>RadioButton</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_6">
-         <property name="text">
-          <string>RadioButton</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_7">
-         <property name="text">
-          <string>RadioButton</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_8">
-         <property name="text">
-          <string>RadioButton</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_9">
-         <property name="text">
-          <string>RadioButton</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_10">
-         <property name="text">
-          <string>RadioButton</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_11">
-         <property name="text">
-          <string>RadioButton</string>
-         </property>
-        </widget>
-       </widget>
-      </widget>
       <widget class="QTableView" name="towar_table">
        <property name="geometry">
         <rect>
-         <x>270</x>
+         <x>0</x>
          <y>40</y>
-         <width>1011</width>
+         <width>1281</width>
          <height>591</height>
         </rect>
        </property>
@@ -750,7 +508,7 @@
       <widget class="QPushButton" name="dodaj_towar_btn">
        <property name="geometry">
         <rect>
-         <x>270</x>
+         <x>0</x>
          <y>0</y>
          <width>171</width>
          <height>41</height>
@@ -779,7 +537,7 @@
        </property>
        <property name="geometry">
         <rect>
-         <x>440</x>
+         <x>340</x>
          <y>0</y>
          <width>171</width>
          <height>41</height>
@@ -792,7 +550,7 @@
       <widget class="QPushButton" name="kategorie_towar_btn">
        <property name="geometry">
         <rect>
-         <x>610</x>
+         <x>170</x>
          <y>0</y>
          <width>171</width>
          <height>41</height>
@@ -808,7 +566,7 @@
        </property>
        <property name="geometry">
         <rect>
-         <x>780</x>
+         <x>510</x>
          <y>0</y>
          <width>161</width>
          <height>41</height>
@@ -1709,6 +1467,22 @@
       </property>
       <property name="text">
        <string>Edytuj pracownika</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="usun_pracownicy_btn">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>854</x>
+        <y>0</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Usuń pracownika</string>
       </property>
      </widget>
     </widget>

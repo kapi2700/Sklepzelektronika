@@ -59,6 +59,8 @@ private slots:
     void dodaj_Kategorie();
     void dodaj_Towar();
     void aktualizuj_Towar();
+    void wyczysc_koszyk();
+    void usunPracownika();
 private:
     Ui::aplikacja_sklepu* ui;
     Model* pracownicy_model;

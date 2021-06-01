@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
@@ -101,16 +101,6 @@
       </property>
      </widget>
      <widget class="QLineEdit" name="wew_txt"/>
-    </widget>
-    <widget class="QComboBox" name="comboBox">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>181</width>
-       <height>21</height>
-      </rect>
-     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="tab">

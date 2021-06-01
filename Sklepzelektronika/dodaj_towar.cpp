@@ -56,7 +56,7 @@ void dodaj_towar::dodaj()
 			}
 			_id_kategorii = row[5];
 
-			string _nazwa = ui.kategoria_txt->text().toUtf8().constData();
+			string _nazwa = ui.nazwa_txt->text().toUtf8().constData();
 			string _cena = ui.cena_txt->text().toUtf8().constData();
 			string _vat = ui.vat_txt->text().toUtf8().constData();
 			string _opis = ui.opis_txt->text().toUtf8().constData();
