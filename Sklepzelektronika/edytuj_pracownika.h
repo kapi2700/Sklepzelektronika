@@ -1,5 +1,12 @@
 #pragma once
 
+/*!
+* \file
+* \brief Definicja klasy edytuj_pracownika
+*
+*Plik zawiera definicję klasy edytuj_pracownika
+*/
+
 #include <QWidget>
 #include "ui_edytuj_pracownika.h"
 #include <string>
