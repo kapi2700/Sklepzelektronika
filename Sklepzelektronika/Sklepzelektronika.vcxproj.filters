@@ -88,6 +88,9 @@
     <ClCompile Include="model_towar.cpp">
       <Filter>Source Files\model</Filter>
     </ClCompile>
+    <ClCompile Include="dodaj_kategorie.cpp">
+      <Filter>Source Files\dodaj</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="aplikacja_sklepu.ui">
@@ -109,6 +112,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="dodaj_towar.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="dodaj_kategorie.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -145,6 +151,9 @@
     </QtMoc>
     <QtMoc Include="model_transakcje.h">
       <Filter>Header Files\model</Filter>
+    </QtMoc>
+    <QtMoc Include="dodaj_kategorie.h">
+      <Filter>Header Files\dodaj</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

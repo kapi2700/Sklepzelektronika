@@ -18,6 +18,7 @@
 #include "dodaj_towar.h"
 #include "edytuj_pracownika.h"
 #include "edytuj_towar.h"
+#include "dodaj_kategorie.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class aplikacja_sklepu; }
@@ -48,6 +49,8 @@ private slots:
 
     void dodaj_Pracownika();
 
+    void dodaj_Kategorie();
+
     void dodaj_Towar();
 private:
     Ui::aplikacja_sklepu* ui;
@@ -65,6 +68,8 @@ private:
 
     dodaj_towar* nowyTowar;
     edytuj_towar* towar;
+
+    dodaj_kategorie* nowaKategoria;
 
     int wybrany_klient;
     bool zmiany_klienci;

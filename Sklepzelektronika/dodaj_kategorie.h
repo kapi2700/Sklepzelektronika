@@ -1,25 +1,27 @@
 #pragma once
 
 #include <QWidget>
-#include "ui_dodaj_towar.h"
-#include <vector>
+#include "ui_dodaj_kategorie.h"
 #include <mysql.h>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-class dodaj_towar : public QWidget
+class dodaj_kategorie : public QWidget
 {
 	Q_OBJECT
 
 public:
-	dodaj_towar(MYSQL* c, QWidget* parent = Q_NULLPTR);
-	~dodaj_towar();
+	dodaj_kategorie(MYSQL* c, QWidget* parent = Q_NULLPTR);
+	~dodaj_kategorie();
+
+
 	bool zakonczono;
 	bool zapelnione;
 
 private:
-	Ui::dodaj_towar ui;
+	Ui::dodaj_kategorie ui;
 	MYSQL* conn;
 
 	void dodaj();

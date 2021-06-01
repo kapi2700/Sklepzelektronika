@@ -65,6 +65,7 @@ void dodaj_pracownika::anuluj()
 {
 	zakonczono = true;
 	zapelnione = false;
+	hide();
 }
 
 

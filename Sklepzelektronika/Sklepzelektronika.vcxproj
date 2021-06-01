@@ -109,6 +109,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dodaj_kategorie.cpp" />
     <ClCompile Include="Dodaj_klienta.cpp" />
     <ClCompile Include="dodaj_pracownika.cpp" />
     <ClCompile Include="dodaj_towar.cpp" />
@@ -125,6 +126,7 @@
     <ClCompile Include="aplikacja_sklepu.cpp" />
     <ClCompile Include="bazadanych.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="dodaj_kategorie.ui" />
     <QtUic Include="Dodaj_klienta.ui" />
     <QtUic Include="dodaj_pracownika.ui" />
     <QtUic Include="dodaj_towar.ui" />
@@ -147,6 +149,7 @@
     <QtMoc Include="edytuj_pracownika.h" />
     <QtMoc Include="dodaj_pracownika.h" />
     <QtMoc Include="dodaj_towar.h" />
+    <QtMoc Include="dodaj_kategorie.h" />
     <ClInclude Include="sha256.h" />
   </ItemGroup>
   <ItemGroup>

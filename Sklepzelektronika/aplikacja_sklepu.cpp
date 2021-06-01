@@ -1,20 +1,33 @@
 #include "aplikacja_sklepu.h"
 #include "ui_aplikacja_sklepu.h"
 
-aplikacja_sklepu::aplikacja_sklepu(QWidget *parent)
+aplikacja_sklepu::aplikacja_sklepu(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::aplikacja_sklepu)
 {
     ui->setupUi(this);
 
+    klienci_model = NULL;
     klient = NULL;
     nowyKlient = NULL;
 
+    pracownicy_model = NULL;
     nowyPracownik = NULL;
+    pracownik = NULL;
+
+    nowaKategoria = NULL;
+
+    towar_model = NULL;
+    nowyTowar = NULL;
+    towar = NULL;
+
+    transakcje_model = NULL;
 
     zmiany_klienci = false;
 
     ui->edytujopis_klienci_btn->setDisabled(1);
+
+    wybrany_klient = -1;
 
     //logowanie
     connect(ui->zaloguj_button, &QPushButton::released, this, &aplikacja_sklepu::zaloguj);
@@ -40,6 +53,8 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget *parent)
     //dodawanie nowych
     connect(ui->dodaj_klienta_btn, &QPushButton::released, this, &aplikacja_sklepu::dodaj_klienta_rel);
     connect(ui->dodaj_pracownicy_btn, &QPushButton::released, this, &aplikacja_sklepu::dodaj_Pracownika);
+    connect(ui->dodaj_towar_btn, &QPushButton::released, this, &aplikacja_sklepu::dodaj_Towar);
+    connect(ui->kategorie_towar_btn, &QPushButton::released, this, &aplikacja_sklepu::dodaj_Kategorie);
 
     //wybieranie
     connect(ui->klienci_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_klienta()));
@@ -299,6 +314,21 @@ void aplikacja_sklepu::szukaj_klienci()
 
 void aplikacja_sklepu::szukaj_produkty()
 {
+    if (nowyTowar != NULL)
+    {
+        if (nowyTowar->zakonczono == false)
+            return;
+        else
+        {
+            delete towar_model;
+            towar_model = new model_towar;
+            towar_model->dane_otrzymane = baza.wyswietl_liste_produktow();
+            ui->towar_table->setModel(towar_model);
+        }
+        delete nowyTowar;
+        nowyTowar = NULL;
+    }
+
     QString str1, str2;
     bool pokaz = false;
 
@@ -433,7 +463,14 @@ void aplikacja_sklepu::dodaj_Pracownika()
     nowyPracownik->show();
 }
 
+void aplikacja_sklepu::dodaj_Kategorie()
+{
+    nowaKategoria = new dodaj_kategorie(baza.conn, Q_NULLPTR);
+    nowaKategoria->show();
+}
+
 void aplikacja_sklepu::dodaj_Towar()
 {
-    
+    nowyTowar = new dodaj_towar(baza.conn, Q_NULLPTR);
+    nowyTowar->show();
 }
