@@ -1,23 +1,193 @@
-<UI version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>edytuj_towar</class>
- <widget class="QWidget" name="edytuj_towar" >
-  <property name="objectName" >
-   <string notr="true">edytuj_towar</string>
-  </property>
-  <property name="geometry" >
+ <widget class="QWidget" name="edytuj_towar">
+  <property name="geometry">
    <rect>
-	<x>0</x>
-	<y>0</y>
-	<width>400</width>
-	<height>300</height>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>372</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>edytuj_towar</string>
   </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>9</y>
+     <width>401</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QLabel" name="blad_lbl">
+     <property name="geometry">
+      <rect>
+       <x>-160</x>
+       <y>185</y>
+       <width>321</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QSplitter" name="splitter_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>381</width>
+       <height>331</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Wybierz dane do modyfikacji:</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="dane_do_modyfikacji_list">
+      <item>
+       <property name="text">
+        <string>nazwa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>cena_jednostkowa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>stawka_VAT</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>cecha_1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>cecha_2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>cecha_3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>cecha_4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>cecha_5</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Podaj nowa wartosc:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="nowa_wartosc_txt"/>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QPushButton" name="edytuj_btn">
+       <property name="text">
+        <string>Edytuj</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="anuluj_btn">
+       <property name="text">
+        <string>Anuluj</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QLabel" name="blad_lbl2">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>220</y>
+       <width>271</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QSplitter" name="splitter_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>371</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QSplitter" name="splitter_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Aktualna ilosc:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ilosc_lbl">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Nowa ilosc:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ilosc_txt"/>
+     <widget class="QSplitter" name="splitter_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QPushButton" name="edytuj_btn_2">
+       <property name="text">
+        <string>Edytuj</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="anuluj_btn_2">
+       <property name="text">
+        <string>Anuluj</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
-</UI>
+</ui>

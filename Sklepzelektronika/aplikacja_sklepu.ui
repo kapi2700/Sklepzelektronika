@@ -802,6 +802,22 @@
         <string>Dodaj nową kategorię</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="kategorie_towar_btn_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>780</x>
+         <y>0</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Aktualizuj Ilosc</string>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="transakcje_page">

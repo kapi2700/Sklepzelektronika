@@ -1,23 +1,89 @@
-<UI version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>edytuj_pracownika</class>
- <widget class="QWidget" name="edytuj_pracownika" >
-  <property name="objectName" >
-   <string notr="true">edytuj_pracownika</string>
-  </property>
-  <property name="geometry" >
+ <widget class="QWidget" name="edytuj_pracownika">
+  <property name="geometry">
    <rect>
-	<x>0</x>
-	<y>0</y>
-	<width>400</width>
-	<height>300</height>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>312</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>edytuj_pracownika</string>
   </property>
+  <widget class="QSplitter" name="splitter_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>270</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <widget class="QLabel" name="label_3">
+    <property name="text">
+     <string>Wybierz dane do modyfikacji:</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="dane_do_modyfikacji_list">
+    <item>
+     <property name="text">
+      <string>imie</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>nazwisko</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>haslo</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="text">
+     <string>Podaj nowa wartosc:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nowa_wartosc_txt"/>
+   <widget class="QSplitter" name="splitter">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QPushButton" name="edytuj_btn">
+     <property name="text">
+      <string>Edytuj</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="anuluj_btn">
+     <property name="text">
+      <string>Anuluj</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="blad_lbl">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>285</y>
+     <width>371</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
-</UI>
+</ui>

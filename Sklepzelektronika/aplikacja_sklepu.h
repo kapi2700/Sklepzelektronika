@@ -48,10 +48,14 @@ private slots:
     void usunKlienta();
 
     void dodaj_Pracownika();
+    void edytujPracownika();
+    void wybor_pracownika();
 
+    void wybor_towaru();
+    void edytujTowar();
     void dodaj_Kategorie();
-
     void dodaj_Towar();
+    void aktualizuj_Towar();
 private:
     Ui::aplikacja_sklepu* ui;
     Model* pracownicy_model;
@@ -73,5 +77,9 @@ private:
 
     int wybrany_klient;
     bool zmiany_klienci;
+
+    int wybrany_pracownik;
+
+    int wybrany_towar;
 };
 #endif // APLIKACJA_SKLEPU_H

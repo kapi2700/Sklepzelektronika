@@ -58,10 +58,15 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget* parent)
 
     //wybieranie
     connect(ui->klienci_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_klienta()));
+    connect(ui->pracownicy_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_pracownika()));
+    connect(ui->towar_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_towaru()));
 
     //edycja
     connect(ui->edytujopis_klienci_btn, &QPushButton::released, this, &aplikacja_sklepu::edytujKlienta);
     connect(ui->usun_klienta_btn, &QPushButton::released, this, &aplikacja_sklepu::usunKlienta);
+    connect(ui->edytuj_pracownicy_btn, & QPushButton::released, this, &aplikacja_sklepu::edytujPracownika);
+    connect(ui->edytuj_towar_btn, &QPushButton::released, this, &aplikacja_sklepu::edytujTowar);
+    connect(ui->kategorie_towar_btn_2, &QPushButton::released, this, &aplikacja_sklepu::aktualizuj_Towar); //to jest przycisk od ilosci towaru
 
     ui->main_stack->setCurrentIndex(0);
 }
@@ -187,6 +192,21 @@ void aplikacja_sklepu::menu()
 
 void aplikacja_sklepu::szukaj_pracownicy()
 {
+    if (pracownik != NULL)
+    {
+        if (pracownik->zakonczono == false)
+            return;
+        else
+        {
+            delete pracownicy_model;
+            pracownicy_model = new Model;
+            pracownicy_model->dane_otrzymane = baza.wyswietl_pracownikow();
+            ui->pracownicy_table->setModel(pracownicy_model);
+        }
+        delete pracownik;
+        pracownik = NULL;
+    }
+
     if (nowyPracownik != NULL)
     {
         if (nowyPracownik->zakonczono == false)
@@ -314,6 +334,21 @@ void aplikacja_sklepu::szukaj_klienci()
 
 void aplikacja_sklepu::szukaj_produkty()
 {
+    if (towar != NULL)
+    {
+        if (towar->zakonczono == false)
+            return;
+        else
+        {
+            delete towar_model;
+            towar_model = new model_towar;
+            towar_model->dane_otrzymane = baza.wyswietl_liste_produktow();
+            ui->towar_table->setModel(towar_model);
+        }
+        delete towar;
+        towar = NULL;
+    }
+
     if (nowyTowar != NULL)
     {
         if (nowyTowar->zakonczono == false)
@@ -473,4 +508,46 @@ void aplikacja_sklepu::dodaj_Towar()
 {
     nowyTowar = new dodaj_towar(baza.conn, Q_NULLPTR);
     nowyTowar->show();
+}
+
+void aplikacja_sklepu::aktualizuj_Towar()
+{
+    towar = new edytuj_towar(baza.conn, towar_model->dane_otrzymane[wybrany_towar], Q_NULLPTR);
+    towar->show();
+    towar->indeks(1);
+}
+
+void aplikacja_sklepu::edytujPracownika()
+{
+    pracownik = new edytuj_pracownika(baza.conn, pracownicy_model->dane_otrzymane[wybrany_pracownik], Q_NULLPTR);
+    pracownik->show();
+}
+
+void aplikacja_sklepu::wybor_pracownika()
+{
+    QModelIndex index = ui->pracownicy_table->currentIndex();
+    int i = index.row(); // now you know which record was selected
+
+    wybrany_pracownik = i;
+
+    ui->edytuj_pracownicy_btn->setDisabled(0);
+}
+
+void aplikacja_sklepu::wybor_towaru()
+{
+    QModelIndex index = ui->towar_table->currentIndex();
+    int i = index.row(); // now you know which record was selected
+
+    wybrany_towar = i;
+
+    ui->edytuj_towar_btn->setDisabled(0);
+    ui->kategorie_towar_btn_2->setDisabled(0); //to jest przycisk od ilosci towaru
+}
+
+
+void aplikacja_sklepu::edytujTowar()
+{
+    towar = new edytuj_towar(baza.conn, towar_model->dane_otrzymane[wybrany_towar], Q_NULLPTR);
+    towar->show();
+    towar->indeks(0);
 }
