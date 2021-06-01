@@ -137,3 +137,4 @@ vector<vector<string>> bazadanych::wyswietl_transakcje()
     }
     return ret;
 }
+

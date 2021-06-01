@@ -13,7 +13,15 @@
   <property name="windowTitle">
    <string>dodaj_pracownika</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>251</width>
+     <height>371</height>
+    </rect>
+   </property>
    <widget class="QSplitter" name="splitter">
     <property name="geometry">
      <rect>
@@ -46,16 +54,16 @@
     <widget class="QLineEdit" name="login_txt"/>
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>TextLabel</string>
+      <string>Hasło</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit"/>
+    <widget class="QLineEdit" name="haslo_txt"/>
     <widget class="QLabel" name="label_6">
      <property name="text">
-      <string>TextLabel</string>
+      <string>Potwierdz Hasło</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2"/>
+    <widget class="QLineEdit" name="haslo2_txt"/>
     <widget class="QLabel" name="label_4">
      <property name="text">
       <string>Stanowisko</string>
@@ -92,6 +100,11 @@
        <string>Anuluj</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QLabel" name="blad_lbl">
+     <property name="text">
+      <string/>
+     </property>
     </widget>
    </widget>
   </widget>

@@ -10,6 +10,8 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget *parent)
     klient = NULL;
     nowyKlient = NULL;
 
+    nowyPracownik = NULL;
+
     zmiany_klienci = false;
 
     ui->edytujopis_klienci_btn->setDisabled(1);
@@ -37,6 +39,7 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget *parent)
 
     //dodawanie nowych
     connect(ui->dodaj_klienta_btn, &QPushButton::released, this, &aplikacja_sklepu::dodaj_klienta_rel);
+    connect(ui->dodaj_pracownicy_btn, &QPushButton::released, this, &aplikacja_sklepu::dodaj_Pracownika);
 
     //wybieranie
     connect(ui->klienci_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_klienta()));
@@ -44,6 +47,8 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget *parent)
     //edycja
     connect(ui->edytujopis_klienci_btn, &QPushButton::released, this, &aplikacja_sklepu::edytujKlienta);
     connect(ui->usun_klienta_btn, &QPushButton::released, this, &aplikacja_sklepu::usunKlienta);
+
+    ui->main_stack->setCurrentIndex(0);
 }
 
 aplikacja_sklepu::~aplikacja_sklepu()
@@ -167,6 +172,21 @@ void aplikacja_sklepu::menu()
 
 void aplikacja_sklepu::szukaj_pracownicy()
 {
+    if (nowyPracownik != NULL)
+    {
+        if (nowyPracownik->zakonczono == false)
+            return;
+        else
+        {
+            delete pracownicy_model;
+            pracownicy_model = new Model;
+            pracownicy_model->dane_otrzymane = baza.wyswietl_pracownikow();
+            ui->pracownicy_table->setModel(pracownicy_model);
+        }
+        delete nowyPracownik;
+        nowyPracownik = NULL;
+    }
+
     QString str1, str2;
     bool pokaz = false;
 
@@ -405,4 +425,15 @@ void aplikacja_sklepu::usunKlienta()
     mysql_query(baza.conn, zapytanie.c_str());
 
     zmiany_klienci = true;
+}
+
+void aplikacja_sklepu::dodaj_Pracownika()
+{
+    nowyPracownik = new dodaj_pracownika(baza.conn, Q_NULLPTR);
+    nowyPracownik->show();
+}
+
+void aplikacja_sklepu::dodaj_Towar()
+{
+    
 }

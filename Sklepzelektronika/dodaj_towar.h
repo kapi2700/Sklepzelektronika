@@ -13,8 +13,13 @@ class dodaj_towar : public QWidget
 public:
 	dodaj_towar(QWidget *parent = Q_NULLPTR);
 	~dodaj_towar();
+	bool zakonczono;
+	bool zapelnione;
 
 private:
 	Ui::dodaj_towar ui;
+	MYSQL* conn;
 
+	void dodaj();
+	void anuluj();
 };

@@ -46,10 +46,12 @@ QVariant Model::headerData(int section, Qt::Orientation orientation, int role) c
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
         switch (section) {
         case 0:
-            return QString("Imie");
+            return QString("Id");
         case 1:
-            return QString("Nazwisko");
+            return QString("Imie");
         case 2:
+            return QString("Nazwisko");
+        case 3:
             return QString("Rola");
         }
     }

@@ -14,6 +14,10 @@
 #include "model_transakcje.h"
 #include "Dodaj_klienta.h"
 #include "edytuj_klienta.h"
+#include "dodaj_pracownika.h"
+#include "dodaj_towar.h"
+#include "edytuj_pracownika.h"
+#include "edytuj_towar.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class aplikacja_sklepu; }
@@ -38,10 +42,13 @@ private slots:
     void szukaj_transakcje();
 
     void dodaj_klienta_rel();
-
     void wybor_klienta();
     void edytujKlienta();
     void usunKlienta();
+
+    void dodaj_Pracownika();
+
+    void dodaj_Towar();
 private:
     Ui::aplikacja_sklepu* ui;
     Model* pracownicy_model;
@@ -52,6 +59,12 @@ private:
 
     Dodaj_klienta* nowyKlient;
     edytuj_klienta* klient;
+
+    dodaj_pracownika* nowyPracownik;
+    edytuj_pracownika* pracownik;
+
+    dodaj_towar* nowyTowar;
+    edytuj_towar* towar;
 
     int wybrany_klient;
     bool zmiany_klienci;

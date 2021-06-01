@@ -21,6 +21,24 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="Source Files\dodaj">
+      <UniqueIdentifier>{883ece43-b833-48d9-80fc-9b1ec07fb529}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\edytuj">
+      <UniqueIdentifier>{2698f7cf-ccb4-404c-a227-677eadb19253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model">
+      <UniqueIdentifier>{310b065d-9ebe-443e-9e06-5626601f5d46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dodaj">
+      <UniqueIdentifier>{9226d011-881f-411e-aaaf-6be656912167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\edytuj">
+      <UniqueIdentifier>{d1dac054-16ff-4182-a058-db02c28f51c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model">
+      <UniqueIdentifier>{c5a6fdf7-884d-49fa-9895-0244232b8abf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Sklepzelektronika.qrc">
@@ -40,35 +58,35 @@
     <ClCompile Include="sha256.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="model_towar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="model_klienci.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="model_transakcje.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Dodaj_klienta.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="edytuj_klienta.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="edytuj_towar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="edytuj_pracownika.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\dodaj</Filter>
     </ClCompile>
     <ClCompile Include="dodaj_pracownika.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\dodaj</Filter>
     </ClCompile>
     <ClCompile Include="dodaj_towar.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\dodaj</Filter>
+    </ClCompile>
+    <ClCompile Include="edytuj_klienta.cpp">
+      <Filter>Source Files\edytuj</Filter>
+    </ClCompile>
+    <ClCompile Include="edytuj_pracownika.cpp">
+      <Filter>Source Files\edytuj</Filter>
+    </ClCompile>
+    <ClCompile Include="edytuj_towar.cpp">
+      <Filter>Source Files\edytuj</Filter>
+    </ClCompile>
+    <ClCompile Include="model_transakcje.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model_klienci.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model_towar.cpp">
+      <Filter>Source Files\model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,35 +116,35 @@
     <QtMoc Include="aplikacja_sklepu.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="Model.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="model_towar.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="model_transakcje.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="model_klienci.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="Dodaj_klienta.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="edytuj_klienta.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="edytuj_towar.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="edytuj_pracownika.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\dodaj</Filter>
     </QtMoc>
     <QtMoc Include="dodaj_pracownika.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\dodaj</Filter>
     </QtMoc>
     <QtMoc Include="dodaj_towar.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\dodaj</Filter>
+    </QtMoc>
+    <QtMoc Include="edytuj_klienta.h">
+      <Filter>Header Files\edytuj</Filter>
+    </QtMoc>
+    <QtMoc Include="edytuj_pracownika.h">
+      <Filter>Header Files\edytuj</Filter>
+    </QtMoc>
+    <QtMoc Include="edytuj_towar.h">
+      <Filter>Header Files\edytuj</Filter>
+    </QtMoc>
+    <QtMoc Include="Model.h">
+      <Filter>Header Files\model</Filter>
+    </QtMoc>
+    <QtMoc Include="model_klienci.h">
+      <Filter>Header Files\model</Filter>
+    </QtMoc>
+    <QtMoc Include="model_towar.h">
+      <Filter>Header Files\model</Filter>
+    </QtMoc>
+    <QtMoc Include="model_transakcje.h">
+      <Filter>Header Files\model</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

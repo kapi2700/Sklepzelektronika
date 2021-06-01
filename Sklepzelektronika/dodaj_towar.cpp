@@ -9,3 +9,11 @@ dodaj_towar::dodaj_towar(QWidget *parent)
 dodaj_towar::~dodaj_towar()
 {
 }
+
+void dodaj_towar::dodaj()
+{
+}
+
+void dodaj_towar::anuluj()
+{
+}

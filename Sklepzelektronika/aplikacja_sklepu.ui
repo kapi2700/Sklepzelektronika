@@ -57,7 +57,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="login_page">
      <widget class="QWidget" name="Logowanie_widget" native="true">
@@ -747,7 +747,7 @@
         <bool>false</bool>
        </attribute>
       </widget>
-      <widget class="QPushButton" name="dodajtowar_btn">
+      <widget class="QPushButton" name="dodaj_towar_btn">
        <property name="geometry">
         <rect>
          <x>270</x>
@@ -771,6 +771,35 @@
        </property>
        <property name="text">
         <string>Koszyk</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="edytuj_towar_btn">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>0</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Edytuj towar</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="kategorie_towar_btn">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>0</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Dodaj nową kategorię</string>
        </property>
       </widget>
      </widget>
@@ -1603,6 +1632,22 @@
       </property>
       <property name="text">
        <string>Dodaj pracownika</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="edytuj_pracownicy_btn">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>0</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Edytuj pracownika</string>
       </property>
      </widget>
     </widget>
