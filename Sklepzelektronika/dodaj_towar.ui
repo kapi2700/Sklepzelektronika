@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dodaj_towar</class>
+ <widget class="QWidget" name="dodaj_towar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>505</width>
+    <height>602</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>dodaj_towar</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>481</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Kategoria</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="kategoria_txt"/>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Nazwa</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="nazwa_txt"/>
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Cena</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="cena_txt"/>
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Vat</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="vat_txt"/>
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Cecha 1</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="cecha1_txt"/>
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Cecha 2</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="cecha2_txt"/>
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Cecha 3</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="cecha3_txt"/>
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Cecha 4</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="cecha4_txt"/>
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Cecha 5</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="cecha5_txt"/>
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Opis</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="opis_txt"/>
+    <widget class="QSplitter" name="splitter_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QPushButton" name="dodaj_btn">
+      <property name="text">
+       <string>Dodaj</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="anuluj_btn">
+      <property name="text">
+       <string>Anuluj</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

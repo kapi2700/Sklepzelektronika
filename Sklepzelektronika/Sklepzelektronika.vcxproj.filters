@@ -58,6 +58,18 @@
     <ClCompile Include="edytuj_klienta.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="edytuj_towar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edytuj_pracownika.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dodaj_pracownika.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dodaj_towar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="aplikacja_sklepu.ui">
@@ -67,6 +79,18 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="edytuj_klienta.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="edytuj_towar.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="edytuj_pracownika.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="dodaj_pracownika.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="dodaj_towar.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -90,6 +114,18 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="edytuj_klienta.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="edytuj_towar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="edytuj_pracownika.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="dodaj_pracownika.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="dodaj_towar.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

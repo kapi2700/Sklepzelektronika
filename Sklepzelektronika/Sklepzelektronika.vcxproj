@@ -110,7 +110,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Dodaj_klienta.cpp" />
+    <ClCompile Include="dodaj_pracownika.cpp" />
+    <ClCompile Include="dodaj_towar.cpp" />
     <ClCompile Include="edytuj_klienta.cpp" />
+    <ClCompile Include="edytuj_pracownika.cpp" />
+    <ClCompile Include="edytuj_towar.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="model_klienci.cpp" />
     <ClCompile Include="model_towar.cpp" />
@@ -122,7 +126,11 @@
     <ClCompile Include="bazadanych.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="Dodaj_klienta.ui" />
+    <QtUic Include="dodaj_pracownika.ui" />
+    <QtUic Include="dodaj_towar.ui" />
     <QtUic Include="edytuj_klienta.ui" />
+    <QtUic Include="edytuj_pracownika.ui" />
+    <QtUic Include="edytuj_towar.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="aplikacja_sklepu.h" />
@@ -135,6 +143,10 @@
     <QtMoc Include="model_transakcje.h" />
     <QtMoc Include="Dodaj_klienta.h" />
     <QtMoc Include="edytuj_klienta.h" />
+    <QtMoc Include="edytuj_towar.h" />
+    <QtMoc Include="edytuj_pracownika.h" />
+    <QtMoc Include="dodaj_pracownika.h" />
+    <QtMoc Include="dodaj_towar.h" />
     <ClInclude Include="sha256.h" />
   </ItemGroup>
   <ItemGroup>

@@ -1,13 +1,6 @@
 #include "edytuj_klienta.h"
 
 
-
-//edytuj_klienta::edytuj_klienta(QWidget *parent)
-//	: QWidget(parent)
-//{
-//	ui.setupUi(this);
-//}
-
 edytuj_klienta::edytuj_klienta(MYSQL* c,vector<string> data, QWidget* parent)
 	: QWidget(parent)
 {

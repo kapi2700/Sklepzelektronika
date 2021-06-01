@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dodaj_pracownika</class>
+ <widget class="QWidget" name="dodaj_pracownika">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>269</width>
+    <height>372</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>dodaj_pracownika</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>251</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Imię</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="imie_txt"/>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Nazwisko</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="nazwisko_txt"/>
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Login</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="login_txt"/>
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit"/>
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2"/>
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Stanowisko</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="stanowisko_list">
+     <item>
+      <property name="text">
+       <string>Wlasciciel</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sprzedawca</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Magazynier</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QSplitter" name="splitter_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QPushButton" name="dodaj_btn">
+      <property name="text">
+       <string>Dodaj</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="anuluj_btn">
+      <property name="text">
+       <string>Anuluj</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
