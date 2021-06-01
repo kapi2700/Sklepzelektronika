@@ -17,7 +17,7 @@ edytuj_towar::edytuj_towar(MYSQL* c, vector<string> data, QWidget *parent)
 
 	connect(ui.edytuj_btn, &QPushButton::released, this, &edytuj_towar::edytuj);
 	connect(ui.anuluj_btn, &QPushButton::released, this, &edytuj_towar::anuluj);
-	connect(ui.edytuj_btn_2, &QPushButton::released, this, &edytuj_towar::edytuj); //aktualizuj ilosc
+	connect(ui.edytuj_btn_2, &QPushButton::released, this, &edytuj_towar::aktualizujilosc); //aktualizuj ilosc
 	connect(ui.anuluj_btn_2, &QPushButton::released, this, &edytuj_towar::anuluj);
 
 	ui.ilosc_lbl->setText(QString::fromUtf8(data[2].c_str()));
@@ -81,11 +81,9 @@ void edytuj_towar::aktualizujilosc()
 {
 	string _produkt = dane[1];
 	_produkt = "\"" + _produkt + "\"";
-
 	string _liczba = ui.ilosc_txt->text().toUtf8().constData();
 	_liczba = "\"" + _liczba + "\"";
 
-	ui.blad_lbl2->setText("Wartosc nie moze byc pusta");
 
 	string zapytanie = "call zakup_produkt(" + _produkt + "," + _liczba + ");";
 	int status = mysql_query(conn, zapytanie.c_str());
