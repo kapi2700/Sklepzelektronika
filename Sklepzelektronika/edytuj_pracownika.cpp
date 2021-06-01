@@ -17,6 +17,8 @@ edytuj_pracownika::edytuj_pracownika(MYSQL* c, vector<string> data, QWidget* par
 
 edytuj_pracownika::~edytuj_pracownika()
 {
+	zakonczono = true;
+	zapelnione = false;
 }
 
 

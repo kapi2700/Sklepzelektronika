@@ -15,7 +15,8 @@ dodaj_pracownika::dodaj_pracownika(MYSQL* c, QWidget* parent)
 
 dodaj_pracownika::~dodaj_pracownika()
 {
-
+	zakonczono = true;
+	zapelnione = false;
 }
 
 void dodaj_pracownika::dodaj()

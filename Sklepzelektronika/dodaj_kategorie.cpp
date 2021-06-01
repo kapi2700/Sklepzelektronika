@@ -17,6 +17,8 @@ dodaj_kategorie::dodaj_kategorie(MYSQL* c, QWidget* parent)
 
 dodaj_kategorie::~dodaj_kategorie()
 {
+	zakonczono = true;
+	zapelnione = false;
 }
 
 void dodaj_kategorie::dodaj()

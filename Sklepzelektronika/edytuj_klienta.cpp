@@ -87,6 +87,8 @@ edytuj_klienta::edytuj_klienta(MYSQL* c,vector<string> data, QWidget* parent)
 
 edytuj_klienta::~edytuj_klienta()
 {
+	zakonczono = true;
+	zapelnione = false;
 }
 
 void edytuj_klienta::edytuj_adres_klienta()
@@ -264,4 +266,5 @@ void edytuj_klienta::anuluj()
 {
 	zakonczono = true;
 	zapelnione = false;
+	hide();
 }

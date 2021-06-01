@@ -14,6 +14,8 @@ Dodaj_klienta::Dodaj_klienta(QWidget *parent)
 
 Dodaj_klienta::~Dodaj_klienta()
 {
+	zakonczono = true;
+	zapelnione = false;
 }
 
 void Dodaj_klienta::dodaj()

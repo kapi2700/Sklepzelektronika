@@ -55,6 +55,7 @@ private slots:
     void wybor_towaru();
     void edytujTowar();
     void dodajdokoszyka();
+    void pokazkoszyk();
     void dodaj_Kategorie();
     void dodaj_Towar();
     void aktualizuj_Towar();
@@ -77,10 +78,14 @@ private:
 
     dodaj_kategorie* nowaKategoria;
 
+    koszyk* kosz;
+
     int wybrany_klient;
     bool zmiany_klienci;
 
     int wybrany_pracownik;
+
+    int id_zalogowanej_osoby;
 
     int wybrany_towar;
 

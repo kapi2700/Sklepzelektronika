@@ -28,6 +28,12 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget* parent)
     ui->edytujopis_klienci_btn->setDisabled(1);
 
     wybrany_klient = -1;
+    wybrany_pracownik = -1;
+    wybrany_towar = -1;
+
+    kosz = NULL;
+
+    id_zalogowanej_osoby = -1;
 
     //logowanie
     connect(ui->zaloguj_button, &QPushButton::released, this, &aplikacja_sklepu::zaloguj);
@@ -96,8 +102,6 @@ void aplikacja_sklepu::zaloguj()
     QByteArray ha = str2.toLocal8Bit();
     const char* haslo = ha.data();
 
-     
-    //conn = mysql_real_connect(conn, "localhost", "root", "kapi2798", "sklep elektroniczny", 3306, NULL, 0);
     baza.conn = mysql_init(0);
     
     hasz = baza.connect_database(log, haslo);
@@ -105,7 +109,7 @@ void aplikacja_sklepu::zaloguj()
     if (baza.conn)
     {
         ui->main_stack->setCurrentIndex(1);
-        baza.dane_zalogowanego();
+        id_zalogowanej_osoby = baza.dane_zalogowanego();
         ui->name_lbl->setText(baza.nazwa);
         ui->role_lbl->setText(baza.rola);
 
@@ -562,4 +566,11 @@ void aplikacja_sklepu::dodajdokoszyka()
     ilosc = ui->ilosc_dodawana->value();
 
     wkoszyku.push_back(towar_model->dane_otrzymane[wybrany_towar][1]);
+    iloscwkoszyku.push_back(ilosc);
+}
+
+void aplikacja_sklepu::pokazkoszyk()
+{
+    kosz = new koszyk(id_zalogowanej_osoby, wkoszyku, iloscwkoszyku, baza.conn, Q_NULLPTR);
+    kosz->show();
 }

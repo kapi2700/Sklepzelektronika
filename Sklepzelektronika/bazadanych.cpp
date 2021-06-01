@@ -46,6 +46,9 @@ int bazadanych::dane_zalogowanego()
     _tmp = (_imie + " " + _nazwisko);
 
     nazwa = QString::fromStdString(_tmp);
+
+    int id = stoi(_id_pracownika);
+    return id;
 }
 
 vector<vector<string>>  bazadanych::wyswietl_pracownikow()

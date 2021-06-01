@@ -25,6 +25,8 @@ edytuj_towar::edytuj_towar(MYSQL* c, vector<string> data, QWidget *parent)
 
 edytuj_towar::~edytuj_towar()
 {
+	zakonczono = true;
+	zapelnione = false;
 }
 
 void edytuj_towar::indeks(int i)

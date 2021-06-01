@@ -15,6 +15,8 @@ dodaj_towar::dodaj_towar(MYSQL* c, QWidget* parent)
 
 dodaj_towar::~dodaj_towar()
 {
+	zakonczono = true;
+	zapelnione = false;
 }
 
 void dodaj_towar::dodaj()
