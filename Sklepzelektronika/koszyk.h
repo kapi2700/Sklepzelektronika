@@ -1,5 +1,12 @@
 #pragma once
 
+/*!
+* \file
+* \brief Definicja klasy koszyk
+*
+*Plik zawiera definicję klasy koszyk
+*/
+
 #include <QWidget>
 #include "ui_koszyk.h"
 #include <vector>
