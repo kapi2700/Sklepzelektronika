@@ -1,5 +1,12 @@
 #pragma once
 
+/*!
+* \file
+* \brief Definicja klasy dodaj_pracownika
+*
+*Plik zawiera definicję klasy dodaj_pracownika
+*/
+
 #include <QWidget>
 #include "ui_dodaj_pracownika.h"
 #include <vector>
