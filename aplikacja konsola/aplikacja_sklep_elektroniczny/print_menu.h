@@ -1,5 +1,12 @@
 #pragma once
 
+/*!
+* \file
+* \brief Funkcje printujace menu
+*
+*Plik zawiera funkcje printujace menu
+*/
+
 void print_menu_wlasciciel();
 void print_menu_sprzedawca();
 void print_menu_magazynier();
