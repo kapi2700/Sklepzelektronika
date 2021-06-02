@@ -1,4 +1,12 @@
 #pragma once
+
+/*!
+* \file
+* \brief Definicja klasy bazadanych
+*
+*Plik zawiera definicję klasy bazadanych
+*/
+
 #include <qstring.h>
 #include <mysql.h>
 #include <string>
