@@ -1,5 +1,12 @@
 #pragma once
 
+/*!
+* \file
+* \brief Definicja klasy edytuj_klienta
+*
+*Plik zawiera definicję klasy edytuj_klienta
+*/
+
 #include <QWidget>
 #include "ui_edytuj_klienta.h"
 #include <vector>
