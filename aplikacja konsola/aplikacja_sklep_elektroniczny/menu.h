@@ -1,4 +1,13 @@
 #pragma once
+
+/*!
+* \file
+* \brief Funkcje menu
+*
+*Plik zawiera funkcje uzywane 
+*przy obsludze menu
+*/
+
 #include <mysql.h>
 #include <string>
 
