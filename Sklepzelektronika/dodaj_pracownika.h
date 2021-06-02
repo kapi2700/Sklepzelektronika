@@ -1,11 +1,11 @@
-#pragma once
-
 /*!
 * \file
 * \brief Definicja klasy dodaj_pracownika
 *
 *Plik zawiera definicję klasy dodaj_pracownika
 */
+#pragma once
+
 
 #include <QWidget>
 #include "ui_dodaj_pracownika.h"
@@ -31,7 +31,15 @@ private:
 	Ui::dodaj_pracownika ui;
 	MYSQL* conn;
 
+	/**
+	 * Dodaje pracownika.
+	 * 
+	 */
 	void dodaj();
+	/**
+	 * Anuluje dzialania w oknie.
+	 * 
+	 */
 	void anuluj();
 };
 

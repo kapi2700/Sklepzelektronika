@@ -1,11 +1,11 @@
-#pragma once
-
 /*!
 * \file
 * \brief Definicja klasy dodaj_kategorie
 *
 *Plik zawiera definicję klasy dodaj_kategorie
 */
+#pragma once
+
 
 #include <QWidget>
 #include "ui_dodaj_kategorie.h"
@@ -31,6 +31,14 @@ private:
 	Ui::dodaj_kategorie ui;
 	MYSQL* conn;
 
+	/**
+	 * Dodaje kategorie.
+	 * 
+	 */
 	void dodaj();
+	/**
+	 * Anuluje dzialanie w oknie.
+	 * 
+	 */
 	void anuluj();
 };

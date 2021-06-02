@@ -1,11 +1,11 @@
-#pragma once
-
 /*!
 * \file
 * \brief Definicja klasy edytuj_towar
 *
 *Plik zawiera definicję klasy edytuj_towar
 */
+
+#pragma once
 
 #include <QWidget>
 #include "ui_edytuj_towar.h"
@@ -28,12 +28,29 @@ public:
 
 	vector<string> dane;
 
+	/**
+	 * Zmienia widok w oknie.
+	 * 
+	 * \param i - ktory widok ma byc ustawiony
+	 */
 	void indeks(int i);
 private:
 	Ui::edytuj_towar ui;
 	MYSQL* conn;
 
+	/**
+	 * Zatwierdza akcje w oknie.
+	 * 
+	 */
 	void edytuj();
+	/**
+	 * Anuluje wszystkie akcje w oknie.
+	 * 
+	 */
 	void anuluj();
+	/**
+	 * Aktualizuje ilosc towaru.
+	 * 
+	 */
 	void aktualizujilosc();
 };

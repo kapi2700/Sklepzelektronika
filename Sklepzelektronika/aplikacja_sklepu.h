@@ -1,12 +1,12 @@
-#ifndef APLIKACJA_SKLEPU_H
-#define APLIKACJA_SKLEPU_H
-
 /*!
 * \file
 * \brief Definicja klasy aplikacja_sklepu
 *
 *Plik zawiera definicję klasy aplikacja_sklepu
 */
+#ifndef APLIKACJA_SKLEPU_H
+#define APLIKACJA_SKLEPU_H
+
 
 #include <QMainWindow>
 #include <qpushbutton.h>
@@ -39,38 +39,158 @@ public:
     aplikacja_sklepu(QWidget* parent = nullptr);
     ~aplikacja_sklepu();
 private slots:
+    /**
+     * Logowanie do aplikacji i bazy danych.
+     */
     void zaloguj();
+    /**
+     * Wyswietla pracownikow.
+     * 
+     */
     void pracownicy();
+    /**
+     * Wyswietla produkty.
+     * 
+     */
     void produkty();
+    /**
+     * Wyswietla klientow.
+     * 
+     */
     void klienci();
+    /**
+     * Wyswietla transakcje.
+     * 
+     */
     void transakcje();
+    /**
+     * Wyswietla menu.
+     * 
+     */
     void menu();
+    /**
+     * Wyszukuje pracownika z tabeli.
+     * 
+     */
     void szukaj_pracownicy();
+    /**
+     * Wyszukuje klienta z tabeli.
+     * 
+     */
     void szukaj_klienci();
+    /**
+     * Wyszukuje produkty z tabeli.
+     * 
+     */
     void szukaj_produkty();
+    /**
+     * Wyszukiwanie tranzakcji z tabeli.
+     * 
+     */
     void szukaj_transakcje();
 
+    /**
+     * Dodaje nowego klienta.
+     * 
+     */
     void dodaj_klienta_rel();
+    /**
+     * Wybiera klienta z tabeli.
+     * 
+     */
     void wybor_klienta();
+    /**
+     * Edytuje dane klienta.
+     * 
+     */
     void edytujKlienta();
+    /**
+     * Usuwanie klienta z bazy danych.
+     * 
+     */
     void usunKlienta();
 
+    /**
+     * Dodaje nowego pracownika.
+     * 
+     */
     void dodaj_Pracownika();
+    /**
+     * Edycja wybranego pracownika.
+     * 
+     */
     void edytujPracownika();
+    /**
+     * Wybor pracownika z tabeli.
+     * 
+     */
     void wybor_pracownika();
 
+    /**
+     * Wybor towaru z tabeli.
+     * 
+     */
     void wybor_towaru();
+    /**
+     * Edytuje dane towaru.
+     * 
+     */
     void edytujTowar();
+    /**
+     * Dodaje produkt do koszyka.
+     * 
+     */
     void dodajdokoszyka();
+    /**
+     * Pokaz zawartosc koszyka, prowadzi do wystawienia paragonu.
+     * 
+     */
     void pokazkoszyk();
+    /**
+     * Wybór tranzakcji z tabeli.
+     * 
+     */
     void wybor_transakcji();
+    /**
+     * Inicjalizacja tabeli ze szczegółami tranzakcji.
+     * 
+     */
     void szczegoly_transakcji();
+    /**
+     * Wybor szczegolow tranzakcji z tabeli.
+     * 
+     */
     void wybor_szczegolow();
+    /**
+     * Reklamacja towaru w tranzakcji.
+     * 
+     */
     void reklamuj();
+    /**
+     * Dodawanie nowej kategorii.
+     * 
+     */
     void dodaj_Kategorie();
+    /**
+     * Dodawanie nowego towaru.
+     * 
+     */
     void dodaj_Towar();
+    /**
+     * Aktualizuje ilosc towaru.
+     * 
+     */
     void aktualizuj_Towar();
+    /**
+     * Czyszczenie zawartosci koszyka.
+     * 
+     */
     void wyczysc_koszyk();
+
+    /**
+     * Usuwanie pracownika.
+     *
+     */
     void usunPracownika();
 private:
     Ui::aplikacja_sklepu* ui;

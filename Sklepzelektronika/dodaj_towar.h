@@ -1,11 +1,11 @@
-#pragma once
-
 /*!
 * \file
 * \brief Definicja klasy dodaj_towar
 *
 *Plik zawiera definicję klasy dodaj_towar
 */
+#pragma once
+
 
 #include <QWidget>
 #include "ui_dodaj_towar.h"
@@ -29,6 +29,14 @@ private:
 	Ui::dodaj_towar ui;
 	MYSQL* conn;
 
+	/**
+	 * Dodaje towar.
+	 * 
+	 */
 	void dodaj();
+	/**
+	 * Anuluje dzialania w oknie.
+	 * 
+	 */
 	void anuluj();
 };

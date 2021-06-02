@@ -28,6 +28,14 @@ public:
 private:
 	Ui::Dodaj_klienta ui;
 
+	/**
+	 * Dodaje klienta.
+	 * 
+	 */
 	void dodaj();
+	/**
+	 * Anuluje dzialania w oknie.
+	 * 
+	 */
 	void anuluj();
 };

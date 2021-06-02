@@ -1,11 +1,11 @@
-#pragma once
-
 /*!
 * \file
 * \brief Definicja klasy edytuj_klienta
 *
 *Plik zawiera definicję klasy edytuj_klienta
 */
+#pragma once
+
 
 #include <QWidget>
 #include "ui_edytuj_klienta.h"
@@ -32,11 +32,35 @@ private:
 	Ui::edytuj_klienta ui;
 	MYSQL* conn;
 
+	/**
+	 * Edycja adresu klienta.
+	 * 
+	 */
 	void edytuj_adres_klienta();
+	/**
+	 * Edycja wybranego telefonu klienta.
+	 * 
+	 */
 	void edytuj_telefon_klienta();
+	/**
+	 * Edycja personali klienta.
+	 * 
+	 */
 	void edytuj_personalia_klienta();
+	/**
+	 * Dodawanie numeru telefonu do klienta.
+	 * 
+	 */
 	void dodaj_telefon_klienta();
 
+	/**
+	 * Zatwierdza dzialania w oknie.
+	 * 
+	 */
 	void potwierdz();
+	/**
+	 * Anuluje wszystkie akcje w oknie.
+	 *
+	 */
 	void anuluj();
 };

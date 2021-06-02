@@ -1,11 +1,11 @@
-#pragma once
-
 /*!
 * \file
 * \brief Definicja klasy edytuj_pracownika
 *
 *Plik zawiera definicję klasy edytuj_pracownika
 */
+#pragma once
+
 
 #include <QWidget>
 #include "ui_edytuj_pracownika.h"
@@ -32,6 +32,14 @@ private:
 	Ui::edytuj_pracownika ui;
 	MYSQL* conn;
 
+	/**
+	 * Zatwierdza akcje w oknie.
+	 *
+	 */
 	void edytuj();
+	/**
+	 * Anuluje wszystkie akcje w oknie.
+	 *
+	 */
 	void anuluj();
 };

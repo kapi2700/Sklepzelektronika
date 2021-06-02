@@ -1,11 +1,11 @@
-#pragma once
-
 /*!
 * \file
 * \brief Definicja klasy koszyk
 *
 *Plik zawiera definicję klasy koszyk
 */
+#pragma once
+
 
 #include <QWidget>
 #include "ui_koszyk.h"
@@ -34,9 +34,29 @@ private:
 	Ui::koszyk ui;
 	MYSQL* conn;
 
+	/**
+	 * Daje mozliwosc wprowadzenia danych klienta przed dokonaniem tranzakcji.
+	 * 
+	 */
 	void faktura();
+	/**
+	 * Tworzy tranzakcje, bez podawania danych klienta.
+	 * 
+	 */
 	void paragon();
+	/**
+	 * Sprawdza czy klient istnieje.
+	 * 
+	 */
 	void sprawdzKlienta();
+	/**
+	 * Zakańcza kupno produktow, tworzy tranzakcje.
+	 * 
+	 */
 	void zakoncz();
+	/**
+	 * Anuluje kupowanie produktow.
+	 * 
+	 */
 	void anuluj();
 };
