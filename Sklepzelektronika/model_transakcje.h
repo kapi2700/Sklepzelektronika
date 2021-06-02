@@ -1,4 +1,12 @@
 #pragma once
+
+/*!
+* \file
+* \brief Definicja klasy model_transakcje
+*
+*Plik zawiera definicję klasy model_transakcje
+*/
+
 #include <qabstractitemmodel.h>
 #include <string>
 #include <vector>
