@@ -18,7 +18,7 @@ MYSQL* connect_database(MYSQL* conn, string &_login) {
 		SHA256 haszuj;
 		string zahaszowane = haszuj(haslo);
 		conn = mysql_init(0);
-		conn = mysql_real_connect(conn, "localhost", login.c_str(), zahaszowane.c_str(), "sklep elektroniczny", 3306, NULL, 0);
+		conn = mysql_real_connect(conn, "localhost", login.c_str(), zahaszowane.c_str(), "elektroniczny", 3306, NULL, 0);
 		if (conn) {
 			_login = login;
 			connected = true;

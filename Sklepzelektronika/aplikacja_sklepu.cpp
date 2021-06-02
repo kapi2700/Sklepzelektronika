@@ -66,6 +66,8 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget* parent)
     connect(ui->klienci_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_klienta()));
     connect(ui->pracownicy_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_pracownika()));
     connect(ui->towar_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_towaru()));
+    connect(ui->transakcje_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_transakcji()));
+    connect(ui->szczegoly_table, SIGNAL(clicked(const QModelIndex&)), this, SLOT(wybor_szczegolow()));
 
     //edycja
     connect(ui->edytujopis_klienci_btn, &QPushButton::released, this, &aplikacja_sklepu::edytujKlienta);
@@ -81,9 +83,12 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget* parent)
     connect(ui->wyczysckoszyk_btn, &QPushButton::released, this, &aplikacja_sklepu::wyczysc_koszyk);
     connect(ui->dodajdokoszyka_btn, &QPushButton::released, this, &aplikacja_sklepu::dodajdokoszyka);
 
+    //reklamacja
+    //connect(ui->reklamacja_btn, &QPushButton::released, this, &aplikacja_sklepu::reklamuj);
+
     ui->main_stack->setCurrentIndex(0);
 
-    if (baza.stanowisko != 1)
+    if (baza.stanowisko == 1)
     {
         ui->dodaj_towar_btn->setDisabled(1);
         ui->kategorie_towar_btn->setDisabled(1);
@@ -578,14 +583,14 @@ void aplikacja_sklepu::wybor_towaru()
 
 
 
-    if (baza.stanowisko != 1)
+    if (baza.stanowisko == 1)
     {
         ui->edytuj_towar_btn->setDisabled(0);
         ui->kategorie_towar_btn_2->setDisabled(0); //to jest przycisk od ilosci towaru
         ui->ilosc_dodawana->setDisabled(0);
         ui->ilosc_dodawana->setMaximum(stoi(towar_model->dane_otrzymane[i][2]));
     }
-    if (baza.stanowisko != 2)
+    if (baza.stanowisko != 3)
     {
         ui->dodajdokoszyka_btn->setDisabled(0);
     }
@@ -612,4 +617,87 @@ void aplikacja_sklepu::pokazkoszyk()
 {
     kosz = new koszyk(id_zalogowanej_osoby, wkoszyku, iloscwkoszyku, baza.conn, Q_NULLPTR);
     kosz->show();
+}
+
+
+void aplikacja_sklepu::wybor_transakcji()
+{
+    QModelIndex index = ui->transakcje_table->currentIndex();
+    int i = index.row(); // now you know which record was selected
+
+    wybrana_transakcja = i;
+
+    ui->szczegoly_table->clearContents();
+    ui->szczegoly_table->clear();
+    szczegoly_transakcji();
+    ui->reklamacja_btn->setEnabled(0);
+
+}
+
+void aplikacja_sklepu::szczegoly_transakcji()
+{
+
+
+    string _id_transakcji;
+
+    _id_transakcji = transakcje_model->dane_otrzymane[wybrana_transakcja][1];
+    _id_transakcji = "\"" + _id_transakcji + "\"";
+
+    ui->szczegoly_table->setColumnCount(5);
+
+    string zapytanie = "call view_transaction(" + _id_transakcji + ");";
+    int status = mysql_query(baza.conn, zapytanie.c_str());
+    int j = 0;
+    if (!status) {
+        MYSQL_RES* res = mysql_store_result(baza.conn);
+        MYSQL_ROW row;
+        while (row = mysql_fetch_row(res)) {
+            ui->szczegoly_table->insertRow(0);
+            for (int i = 0; i < 5; ++i) {
+                QTableWidgetItem* nazwa = new QTableWidgetItem(QString::fromStdString(row[i]));
+                ui->szczegoly_table->setItem(j, i, nazwa);
+            }
+            j++;
+        }
+    }
+    else
+    {
+        ui->bledy_transakcje_lbl->setText(QString::fromUtf8(zapytanie.c_str()));
+    }
+}
+
+void aplikacja_sklepu::wybor_szczegolow()
+{
+    QModelIndex index = ui->transakcje_table->currentIndex();
+    int i = index.row(); // now you know which record was selected
+
+    wybrane_szczegoly = i;
+
+    ui->reklamacja_btn->setEnabled(1);
+}
+
+void aplikacja_sklepu::reklamuj()
+{
+    string _id_transakcji;
+
+    _id_transakcji = transakcje_model->dane_otrzymane[wybrana_transakcja][1];
+    _id_transakcji = "\"" + _id_transakcji + "\"";
+
+
+    string _id_produktu;
+
+    _id_produktu = transakcje_model->dane_otrzymane[wybrana_transakcja][1];
+    _id_produktu = "\"" + _id_produktu + "\"";
+
+    string zapytanie = "SELECT count(*) FROM szczegoly_transakcji WHERE id_transakcji="
+        + _id_transakcji + " AND id_produktu=" + _id_produktu + ";";
+    int status = mysql_query(baza.conn, zapytanie.c_str());
+    int result = -1;
+    
+    if (!status) {
+        MYSQL_RES* res = mysql_store_result(baza.conn);
+        MYSQL_ROW row = mysql_fetch_row(res);
+        result = atoi(row[0]);
+    }
+
 }

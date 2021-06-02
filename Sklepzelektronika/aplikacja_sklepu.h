@@ -56,6 +56,10 @@ private slots:
     void edytujTowar();
     void dodajdokoszyka();
     void pokazkoszyk();
+    void wybor_transakcji();
+    void szczegoly_transakcji();
+    void wybor_szczegolow();
+    void reklamuj();
     void dodaj_Kategorie();
     void dodaj_Towar();
     void aktualizuj_Towar();
@@ -82,14 +86,15 @@ private:
 
     koszyk* kosz;
 
-    int wybrany_klient;
+    int id_zalogowanej_osoby;
+    
     bool zmiany_klienci;
 
+    int wybrany_klient;
     int wybrany_pracownik;
-
-    int id_zalogowanej_osoby;
-
     int wybrany_towar;
+    int wybrana_transakcja;
+    int wybrane_szczegoly;
 
     vector<string> wkoszyku;
     vector<int> iloscwkoszyku;
