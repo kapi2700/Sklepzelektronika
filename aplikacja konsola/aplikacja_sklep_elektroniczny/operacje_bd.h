@@ -1,4 +1,13 @@
 #pragma once
+
+/*!
+* \file
+* \brief Operacje na bazie danych
+*
+*Plik zawiera funkcje sluzace do
+*wykonywania operacji na bazie danych
+*/
+
 #include <mysql.h>
 #include <string>
 
