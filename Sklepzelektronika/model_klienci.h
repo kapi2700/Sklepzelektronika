@@ -1,4 +1,12 @@
 #pragma once
+
+/*!
+* \file
+* \brief Definicja klasy model_klienci
+*
+*Plik zawiera definicję klasy model_klienci
+*/
+
 #include <qabstractitemmodel.h>
 #include <string>
 #include <vector>
