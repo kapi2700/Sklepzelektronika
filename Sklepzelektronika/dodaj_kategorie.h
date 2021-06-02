@@ -1,5 +1,12 @@
 #pragma once
 
+/*!
+* \file
+* \brief Definicja klasy dodaj_kategorie
+*
+*Plik zawiera definicję klasy dodaj_kategorie
+*/
+
 #include <QWidget>
 #include "ui_dodaj_kategorie.h"
 #include <mysql.h>
