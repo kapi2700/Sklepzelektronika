@@ -1,5 +1,12 @@
 #pragma once
 
+/*!
+* \file
+* \brief Definicja klasy edytuj_towar
+*
+*Plik zawiera definicję klasy edytuj_towar
+*/
+
 #include <QWidget>
 #include "ui_edytuj_towar.h"
 #include <string>
