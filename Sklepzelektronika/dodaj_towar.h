@@ -1,5 +1,12 @@
 #pragma once
 
+/*!
+* \file
+* \brief Definicja klasy dodaj_towar
+*
+*Plik zawiera definicję klasy dodaj_towar
+*/
+
 #include <QWidget>
 #include "ui_dodaj_towar.h"
 #include <vector>
