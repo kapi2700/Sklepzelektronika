@@ -1,4 +1,12 @@
 #pragma once
+
+/*!
+* \file
+* \brief Definicja klasy model_towar
+*
+*Plik zawiera definicję klasy model_towar
+*/
+
 #include <qabstractitemmodel.h>
 #include <string>
 #include <vector>
