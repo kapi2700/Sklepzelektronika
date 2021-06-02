@@ -1,4 +1,12 @@
 #pragma once
+
+/*!
+* \file
+* \brief Definicja klasy Model
+*
+*Plik zawiera definicję klasy Model
+*/
+
 #include <qabstractitemmodel>
 #include <qfont.h>
 #include <qbrush.h>
