@@ -1,6 +1,13 @@
 #ifndef APLIKACJA_SKLEPU_H
 #define APLIKACJA_SKLEPU_H
 
+/*!
+* \file
+* \brief Definicja klasy aplikacja_sklepu
+*
+*Plik zawiera definicję klasy aplikacja_sklepu
+*/
+
 #include <QMainWindow>
 #include <qpushbutton.h>
 #include <mysql.h>
