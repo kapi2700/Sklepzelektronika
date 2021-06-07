@@ -6,7 +6,6 @@ string bazadanych::connect_database(const char* _login, const char* _pass)
     string zahaszowane = haszuj(_pass);
     conn = mysql_init(0);
     conn = mysql_real_connect(conn, "localhost", _login, zahaszowane.c_str(), "elektroniczny", 3306, NULL, 0);
-    //conn = mysql_real_connect(conn, "localhost", "root", "kapi2798", "elektroniczny", 3306, NULL, 0);
 
     login = _login;
 

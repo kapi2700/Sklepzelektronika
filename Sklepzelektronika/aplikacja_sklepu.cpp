@@ -30,6 +30,8 @@ aplikacja_sklepu::aplikacja_sklepu(QWidget* parent)
     wybrany_klient = -1;
     wybrany_pracownik = -1;
     wybrany_towar = -1;
+    wybrane_szczegoly = -1;
+    wybrana_transakcja = -1;
 
     kosz = NULL;
 
@@ -636,8 +638,6 @@ void aplikacja_sklepu::wybor_transakcji()
 
 void aplikacja_sklepu::szczegoly_transakcji()
 {
-
-
     string _id_transakcji;
 
     _id_transakcji = transakcje_model->dane_otrzymane[wybrana_transakcja][1];
@@ -645,17 +645,21 @@ void aplikacja_sklepu::szczegoly_transakcji()
 
     ui->szczegoly_table->setColumnCount(5);
 
-    string zapytanie = "call view_transaction(" + _id_transakcji + ");";
+    //string zapytanie = "call view_transaction(" + _id_transakcji + ");";
+    string zapytanie = "select produkty.id_produktu,nazwa,liczba_sztuk,cena_sprzedazy_brutto,produkty.stawka_VAT from szczegoly_transakcji, produkty where id_transakcji = ";
+    zapytanie = zapytanie + _id_transakcji+ " and szczegoly_transakcji.id_produktu = produkty.id_produktu;";
     int status = mysql_query(baza.conn, zapytanie.c_str());
     int j = 0;
+    QTableWidgetItem* nazwa;
     if (!status) {
         MYSQL_RES* res = mysql_store_result(baza.conn);
         MYSQL_ROW row;
+        ui->szczegoly_table->setRowCount(0);
         while (row = mysql_fetch_row(res)) {
             ui->szczegoly_table->insertRow(0);
             for (int i = 0; i < 5; ++i) {
-                QTableWidgetItem* nazwa = new QTableWidgetItem(QString::fromStdString(row[i]));
-                ui->szczegoly_table->setItem(j, i, nazwa);
+                nazwa = new QTableWidgetItem(QString::fromStdString(row[i]));
+                ui->szczegoly_table->setItem(0, i, nazwa);
             }
             j++;
         }
